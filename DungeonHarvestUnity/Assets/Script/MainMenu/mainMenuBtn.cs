@@ -4,7 +4,7 @@ public class mainMenuBtn : MonoBehaviour
 {
     public void play()
     {
-        SceneManager.LoadScene("Game");
+        // SceneManager.LoadScene("Game");
     }
 
     
