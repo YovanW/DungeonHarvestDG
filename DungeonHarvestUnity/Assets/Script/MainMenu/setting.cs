@@ -93,6 +93,8 @@ public class settingManager : MonoBehaviour
 
         selected.interactable = false;
         Debug.Log("Selected Display Mode: " + selected.name);
+        // TODO: Apply display mode setting to the game window
+
     }
 
     public void SetMouseSensitivity(float value)
