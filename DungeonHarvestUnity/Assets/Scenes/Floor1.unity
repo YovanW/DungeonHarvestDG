@@ -205,13 +205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24660950}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.63, y: 1, z: -21.14}
+  m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: -22.27, y: 2.57, z: -31.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
 --- !u!114 &24660954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +390,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.35
       objectReference: {fileID: 0}
@@ -469,7 +473,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -483,6 +487,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -565,7 +573,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -579,6 +587,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -661,7 +673,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -675,6 +687,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -757,7 +773,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -769,8 +785,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -853,7 +877,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -867,6 +891,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -949,7 +977,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -961,8 +989,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1045,7 +1081,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1278,6 +1314,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.67
       objectReference: {fileID: 0}
@@ -1357,7 +1397,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1369,8 +1409,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1453,7 +1501,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1467,6 +1515,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1549,7 +1601,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1563,6 +1615,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1645,7 +1701,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1659,6 +1715,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1741,10 +1801,67 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &1355921410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.57
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.85
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
+      propertyPath: m_Name
+      value: ShackHighPoly
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c6e3e7745a722d4e98f6083f6dfc86c, type: 3}
 --- !u!1001 &1372990229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1753,8 +1870,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -1837,7 +1962,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1965,6 +2090,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.62
       objectReference: {fileID: 0}
@@ -2044,7 +2173,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2058,6 +2187,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2140,7 +2273,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2152,8 +2285,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2236,7 +2377,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2248,8 +2389,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2332,7 +2481,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2346,6 +2495,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2428,7 +2581,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2442,6 +2595,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2524,7 +2681,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2536,8 +2693,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2620,7 +2785,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2634,6 +2799,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2716,7 +2885,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2730,6 +2899,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2812,7 +2985,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2826,6 +2999,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -2908,7 +3085,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2920,8 +3097,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4201558386844100473, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
+      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4405961680775968051, guid: a9fb09caddf3d504a859a9c5d2fa80cc, type: 3}
@@ -3004,7 +3189,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3039,3 +3224,4 @@ SceneRoots:
   - {fileID: 1879914145}
   - {fileID: 1372990229}
   - {fileID: 2109151352}
+  - {fileID: 1355921410}
