@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI/Fantastic UI Starter Pack/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 9acd9d10dd30b0b4b82b9354f5559148
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: abdd0e696f975324da1b873b87a015b1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
