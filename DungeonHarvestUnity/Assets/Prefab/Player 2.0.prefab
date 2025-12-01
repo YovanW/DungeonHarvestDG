@@ -88,7 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &77798896988902729
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &627036746650240758
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &763154975626098312
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &1246891056917788834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &1724186819342276253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &1921949257364929939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &2302775641011515653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,7 +1781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &2330404283179158560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &2478802088035923382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,7 +2143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &2763526073448937556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,7 +2332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3014722261414670396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,7 +2674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3402187863602775170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,7 +2910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3468743401210426737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +2998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3527055202015462516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,7 +3118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3601533155059855653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3808697415572988495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,7 +3330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &3908084524288000624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,7 +3576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &4498417961118838911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,7 +3664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &4512423476884770771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,7 +3821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &4676818518787258649
 GameObject:
   m_ObjectHideFlags: 0
@@ -4004,7 +3984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &5030337716285046095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4498,7 +4477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &5595408375145185226
 GameObject:
   m_ObjectHideFlags: 0
@@ -4617,7 +4595,6 @@ GameObject:
   - component: {fileID: 6583519037110205964}
   - component: {fileID: 7522671198160490012}
   - component: {fileID: 2439446402388227197}
-  - component: {fileID: 4718101252895538634}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -4709,19 +4686,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4718101252895538634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701495767970642850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f4267575b766ad4db56aaea1d42668d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryParent: {fileID: 9023821108231129402}
 --- !u!1 &5702222101216359877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4906,7 +4870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &5887524930020216251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,7 +4958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &5888130180044325539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5116,7 +5078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6057376970577002710
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,7 +5166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6073312351972545069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,7 +5254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6133488999073549752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6261365264205519496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,7 +5430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6289956026386165922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,7 +5550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6406223398518322539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5757,7 +5713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &6529798512348399126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,7 +5835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &7142855467717229050
 GameObject:
   m_ObjectHideFlags: 0
@@ -6033,7 +5987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &7344991513303619492
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,7 +6300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &7818178004896010900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &7829891973028036826
 GameObject:
   m_ObjectHideFlags: 0
@@ -6653,7 +6604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &8347705146120862848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,7 +6893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &8640156152023335688
 GameObject:
   m_ObjectHideFlags: 0
@@ -7032,7 +6981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &8688658677038132794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7277,7 +7225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &8934339468042513751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,7 +7313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c830ef2437f2742a923bff088963af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
 --- !u!1 &8982284704361172225
 GameObject:
   m_ObjectHideFlags: 0
