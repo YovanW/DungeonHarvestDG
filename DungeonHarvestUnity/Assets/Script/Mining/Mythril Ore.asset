@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c93452fb800204439a0e8f7026eadb3, type: 3}
+  m_Name: Mythril Ore
+  m_EditorClassIdentifier: 
+  oreName: Mythril Ore
+  hardness: 40
+  dropAmount: 5
+  dropPrefab: {fileID: 4645590206194016606, guid: 1fb768028c2f869478a0ce2fdb7f2d4f, type: 3}

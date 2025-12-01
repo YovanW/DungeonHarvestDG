@@ -9,6 +9,10 @@ public class ObjectDetector : MonoBehaviour
     public Vector3 collision = Vector3.zero;
     public float maxInteractRange = 2.5f;
 
+    // data untuk PlayerMining script
+    public bool hitSomething;
+    public RaycastHit hitInfoPublic;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,15 +23,15 @@ public class ObjectDetector : MonoBehaviour
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hitInfo;
-        // Physics.Raycast(ray);
+        RaycastHit hit;
 
-
-        if (Physics.Raycast(ray, out hitInfo, maxInteractRange))
+        if (Physics.Raycast(ray, out hit, maxInteractRange))
         {
-            lookingAt = hitInfo.transform.gameObject;
-            collision = hitInfo.point;
+            hitSomething = true;
+            hitInfoPublic = hit;
 
+            lookingAt = hit.transform.gameObject;
+            collision = hit.point;
 
             if (lookingAt != lastLookingAt)
             {
@@ -35,16 +39,21 @@ public class ObjectDetector : MonoBehaviour
                 lastLookingAt = lookingAt;
             }
         }
+        else
+        {
+            hitSomething = false;
+            lookingAt = null;
 
-        // // always update gizmo for testing
-        // else { collision = transform.position + transform.forward * maxInteractRange; }
+            // // always update gizmo for testing
+            // collision = transform.position + transform.forward * maxInteractRange;
+        }
     }
 
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(collision, 0.2f);
+        Gizmos.DrawSphere(collision, 0.05f);
     }
 
 }
