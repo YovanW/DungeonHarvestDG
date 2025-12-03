@@ -19,7 +19,6 @@ public class InventoryMenu : MonoBehaviour
                 isOpen = false;
                 InventorySlot.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
-                // Time.timeScale = 1f;
             }
             else
             {
@@ -27,7 +26,6 @@ public class InventoryMenu : MonoBehaviour
                 InventorySlot.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                // Time.timeScale = 0f;
             }
         }
     }

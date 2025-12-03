@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class settingManager : MonoBehaviour
 {
+    public GameObject player = null;
+
     // Display Mode Buttons
     public Button fullscreenBtn;
     public Button windowedBtn;
@@ -77,8 +79,6 @@ public class settingManager : MonoBehaviour
         windowedBtn.onClick.AddListener(() => SelectDisplayMode(windowedBtn));
         borderlessBtn.onClick.AddListener(() => SelectDisplayMode(borderlessBtn));
 
-        SelectDisplayMode(fullscreenBtn);   // default display mode
-
         mouseSlider.onValueChanged.AddListener(SetMouseSensitivity);
 
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
@@ -86,22 +86,36 @@ public class settingManager : MonoBehaviour
         vfxSlider.onValueChanged.AddListener(SetVFXVolume);
     }
 
-    void SelectDisplayMode(Button selected)
+    public void SelectDisplayMode(Button selected)
     {
+        displayButtons = new List<Button> { fullscreenBtn, windowedBtn, borderlessBtn };
+
         foreach (var btn in displayButtons)
             btn.interactable = true;
 
         selected.interactable = false;
         Debug.Log("Selected Display Mode: " + selected.name);
-        // TODO: Apply display mode setting to the game window
 
+        // Apply display mode setting to the game window
+        if (selected == fullscreenBtn)
+            PlayerPrefs.SetString("DisplayMode", "Fullscreen");
+        else if (selected == windowedBtn)
+            PlayerPrefs.SetString("DisplayMode", "Windowed");
+        else if (selected == borderlessBtn)
+            PlayerPrefs.SetString("DisplayMode", "Borderless");
+        PlayerPrefs.Save();
     }
 
     public void SetMouseSensitivity(float value)
     {
-        // TODO: Apply mouse sensitivity setting to the game
         mouseValueText.text = value.ToString("F2");
 
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
+        PlayerPrefs.Save();
+
+        if (player != null)
+            // Apply mouse sensitivity setting to the game
+            player.GetComponent<FirstPersonController>().mouseSensitivity = value * 300;
     }
 
 
@@ -109,18 +123,27 @@ public class settingManager : MonoBehaviour
     {
         // audioMixer.SetFloat("MasterVol", Mathf.Lerp(-80, 0, value));
         masterValueText.text = Mathf.RoundToInt(value).ToString();
+
+        PlayerPrefs.SetFloat("MasterVolume", value);
+        PlayerPrefs.Save();
     }
 
     public void SetMusicVolume(float value)
     {
         // audioMixer.SetFloat("MusicVol", Mathf.Lerp(-80, 0, value));
         musicValueText.text = Mathf.RoundToInt(value).ToString();
+
+        PlayerPrefs.SetFloat("MusicVolume", value);
+        PlayerPrefs.Save();
     }
 
     public void SetVFXVolume(float value)
     {
         // audioMixer.SetFloat("VFXVol", Mathf.Lerp(-80, 0, value));
         vfxValueText.text = Mathf.RoundToInt(value).ToString();
+
+        PlayerPrefs.SetFloat("VFXVolume", value);
+        PlayerPrefs.Save();
     }
 
 }
