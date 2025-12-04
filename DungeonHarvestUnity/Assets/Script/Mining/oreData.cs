@@ -7,4 +7,5 @@ public class oreData : ScriptableObject
     public int hardness;
     public int dropAmount;
     public GameObject dropPrefab;
+    public int respawnTime;
 }

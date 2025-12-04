@@ -8,23 +8,29 @@ using UnityEngine.Tilemaps;
 public class ItemSO : ScriptableObject
 {
     public string itemName;
-    public TileBase tile;
     public Sprite icon;
     public GameObject prefab;
     public ItemType type;
     public ActionType actionType;
-    public Vector2Int range = new Vector2Int(5, 4);
     public bool stackable = true;
 
     public enum ItemType
     {
+        Material,
+        Armor,
         Tool,
-        RawOre
+        RawOre,
+        RefinedOre,
+        Fuel,
+        Seed,
+        Consumable,
     }
     public enum ActionType
     {
         Mine,
-        Chop
+        Chop,
+        Attack,
+        None
     }
 
 

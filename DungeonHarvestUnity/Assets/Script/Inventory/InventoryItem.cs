@@ -14,6 +14,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void Start()
     {
         image = GetComponent<Image>();
+        
         InitialiseItem(item);
     }
 

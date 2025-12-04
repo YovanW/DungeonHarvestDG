@@ -9,12 +9,16 @@ public class PlayerMining : MonoBehaviour
 
     void Update()
     {
-        // TODO: add pickaxe is selected in toolbar checker
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ray.lookingAt != null && oreType.Contains(ray.lookingAt.name)) // click kiri
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ray.lookingAt != null)
         {
-            Debug.Log("Mining : " + ray.lookingAt.name);
-            TryMine();
+            Ore ore = ray.lookingAt.GetComponent<Ore>();
+            if (ore != null && oreType.Contains(ore.oreData.oreName))
+            {
+                Debug.Log("Mining: " + ore.oreData.oreName);
+                TryMine();
+            }
         }
+
     }
 
     void TryMine()
@@ -22,9 +26,9 @@ public class PlayerMining : MonoBehaviour
         Ore ore = ray.hitInfoPublic.transform.GetComponent<Ore>();
         if (ore == null) return;
 
-        var miningPower = 10;
+        var miningPower = 5;
 
-        // // TODO: mining logic
+        // TODO: mining logic
         ore.Mine(miningPower);
     }
 
