@@ -24,6 +24,7 @@ public class InventoryMenu : MonoBehaviour
                 isOpen = false;
                 Inventory.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
             }
             else
             {
@@ -31,6 +32,7 @@ public class InventoryMenu : MonoBehaviour
                 Inventory.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                Time.timeScale = 0f;
             }
         }
     }
