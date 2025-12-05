@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bronze Ore
   m_EditorClassIdentifier: 
   itemName: Bronze Ore
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: b0efc91fc281b06419afab2fcf9b317e, type: 3}
+  prefab: {fileID: 188333823234497678, guid: 6ddbc2e43cd7e3c44b60fd4680325dff, type: 3}
   type: 3
   actionType: 3
   stackable: 1

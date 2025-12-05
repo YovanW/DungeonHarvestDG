@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   itemName: Stone
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: d3a65ea9c43612244842acbb72b8296a, type: 3}
+  prefab: {fileID: 4655398889592401133, guid: d6f9364aeda1be04fb58ed4e4b20a65b, type: 3}
   type: 0
   actionType: 3
   stackable: 1

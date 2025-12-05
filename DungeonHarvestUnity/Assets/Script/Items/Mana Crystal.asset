@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mana Crystal
   m_EditorClassIdentifier: 
   itemName: Mana Crystal
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: e33de6df35d6a614ea28f15b10c411d9, type: 3}
+  prefab: {fileID: 2969400456941378272, guid: f6feefc4189936548bbf72312e17be93, type: 3}
   type: 0
   actionType: 3
   stackable: 1

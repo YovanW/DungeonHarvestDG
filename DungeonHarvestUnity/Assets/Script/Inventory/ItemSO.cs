@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Tilemaps;
+using Microsoft.Unity.VisualStudio.Editor;
 
 
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
@@ -10,7 +11,7 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public Sprite icon;
     public GameObject prefab;
-    public ItemType type;
+    public ItemType type; 
     public ActionType actionType;
     public bool stackable = true;
     public int miningPower;
