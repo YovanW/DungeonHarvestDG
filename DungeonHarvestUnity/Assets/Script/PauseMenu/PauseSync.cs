@@ -6,6 +6,7 @@ public class PauseSync : MonoBehaviour
     private bool settingCanvas;
     private bool inventoryMenu;
 
+    private GameObject crosshair;
 
     void Update()
     {
@@ -16,10 +17,25 @@ public class PauseSync : MonoBehaviour
         if (pauseMenu || settingCanvas || inventoryMenu)
         {
             Time.timeScale = 0f;
+
+            // hide crosshair
+            if (crosshair == null) crosshair = GameObject.Find("Crosshair");
+
+            if (crosshair != null)
+            {
+                crosshair.SetActive(false);
+            }
+
         }
         else
         {
             Time.timeScale = 1f;
+
+            // show crosshair
+            if (crosshair != null)
+            {
+                crosshair.SetActive(true);
+            }
         }
     }
 }

@@ -1270,6 +1270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 6823784157366120253}
+  deleteSlot: {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!114 &7737558350383768035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,7 +1459,6 @@ GameObject:
   - component: {fileID: 4528035776080109941}
   - component: {fileID: 8738205132206869899}
   - component: {fileID: 5185162981307690880}
-  - component: {fileID: 4070166446620812160}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1585,21 +1586,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &4070166446620812160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417811253428379349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 101be5a092ecc644089e1104ea645376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crosshairTexture: {fileID: 2800000, guid: 784a27e45e120c24ca6f71f5be3afcba, type: 3}
-  crosshairSize: {x: 20, y: 20}
-  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1457032611426896816
 GameObject:
   m_ObjectHideFlags: 0
