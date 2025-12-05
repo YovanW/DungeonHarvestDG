@@ -8,8 +8,7 @@ public class HotbarManager : MonoBehaviour
 
     void Start()
     {
-        // default select first slot + fix UI layering issue somehow
-        SelectSlot(1);
+        // default select first slot
         SelectSlot(0);
     }
 
@@ -46,6 +45,8 @@ public class HotbarManager : MonoBehaviour
 
     public void SelectSlot(int slotIndex)
     {
+        if (slotIndex == selectedIndex) return;
+
         selectedIndex = slotIndex;
 
         Transform slot = inventorySlots[slotIndex].transform;
