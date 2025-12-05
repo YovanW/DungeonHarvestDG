@@ -14,7 +14,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void Start()
     {
         image = GetComponent<Image>();
-        
+
         InitialiseItem(item);
     }
 
@@ -59,9 +59,31 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         CanvasGroup cg = GetComponent<CanvasGroup>();
         cg.blocksRaycasts = true;
 
+        // check what we dropped on
+        GameObject obj = eventData.pointerEnter;
+
+        if (obj != null)
+        {
+            // if drop target is the highlight selector, switch to its parent instead
+            if (obj.CompareTag("SelectedImage"))
+            {
+                obj = obj.transform.parent.gameObject;
+            }
+
+            InventorySlot slot = obj.GetComponent<InventorySlot>();
+            if (slot != null)
+            {
+                transform.SetParent(slot.transform);
+                transform.localPosition = Vector3.zero;
+                return;
+            }
+        }
+
+        // default fallback if nothing valid was hit
         transform.SetParent(parentAfterDrag);
         transform.localPosition = Vector3.zero;
     }
+
 
 
 }

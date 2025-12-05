@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b45b5d2d9820c642a431c6e229e06c6, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  itemName: 
-  tile: {fileID: 0}
+  itemName: Stone
   icon: {fileID: 0}
   prefab: {fileID: 0}
   type: 0
-  actionType: 0
-  range: {x: 5, y: 4}
+  actionType: 3
   stackable: 1
+  miningPower: 0
+  itemOffsetInHand: {x: 0, y: 0, z: 0}

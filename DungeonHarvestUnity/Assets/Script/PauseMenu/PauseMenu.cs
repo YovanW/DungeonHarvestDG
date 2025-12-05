@@ -32,10 +32,10 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         // settingCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
 
         // force the button to return to normal state
         EventSystem.current.SetSelectedGameObject(null);
+
     }
 
     public void setting()
@@ -43,7 +43,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         settingCanvas.SetActive(true);
 
-        Time.timeScale = 0f;
 
         // force the button to return to normal state
         EventSystem.current.SetSelectedGameObject(null);
@@ -62,25 +61,23 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
+    public void pause()
+    {
+        isOpen = true;
+        pauseMenu.SetActive(true);
+        settingCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void Update()
     {
-        if (settingCanvas.activeSelf == false)
-        {
-            Time.timeScale = 1f;
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isOpen && settingCanvas.activeSelf == false) { resume(); }
-            else if (isOpen && settingCanvas.activeSelf == true) { back(); }
-            else
-            {
-                isOpen = true;
-                pauseMenu.SetActive(true);
-                settingCanvas.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            else if (settingCanvas.activeSelf == true) { back(); }
+            else { pause(); }
         }
     }
+    
 }

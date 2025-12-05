@@ -2,28 +2,33 @@ using UnityEngine;
 
 public class InventoryMenu : MonoBehaviour
 {
-    public GameObject InventorySlot;
+    public GameObject Inventory;
     private bool isOpen = false;
 
     void Start()
     {
-        InventorySlot.SetActive(false);
+        Inventory.SetActive(false);
     }
 
     void Update()
     {
+        if (Inventory.activeSelf == true)
+        {
+            // Time.timeScale = 0f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (isOpen)
             {
                 isOpen = false;
-                InventorySlot.SetActive(false);
+                Inventory.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
                 isOpen = true;
-                InventorySlot.SetActive(true);
+                Inventory.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }

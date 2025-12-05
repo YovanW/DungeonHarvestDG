@@ -13,6 +13,10 @@ public class ItemSO : ScriptableObject
     public ItemType type;
     public ActionType actionType;
     public bool stackable = true;
+    public int miningPower;
+
+    // item offsett in hand
+    public Vector3 itemOffsetInHand;
 
     public enum ItemType
     {

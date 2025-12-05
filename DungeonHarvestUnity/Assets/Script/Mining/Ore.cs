@@ -6,6 +6,7 @@ public class Ore : MonoBehaviour
     public InventoryManager inventoryManager = null;
     public ItemSO[] itemsToPickup;
 
+    private float spawnTimer = 0f;
     private int health;
 
     void Start()
@@ -18,30 +19,70 @@ public class Ore : MonoBehaviour
         }
     }
 
-    public void Mine(int power)
+    void Update()
     {
-        Debug.Log("Power : " + power);
-
-
-        // cek apakah pickaxe sesuai
-        if (power < oreData.hardness)
+        // Spawn timer logic
+        if (spawnTimer > 0f)
         {
-            Debug.Log("Your pickaxe is too weak");
+            // Debug.Log("Spawn timer: " + spawnTimer);
+            spawnTimer -= Time.deltaTime;
+
+            if (spawnTimer <= 0f)
+            {
+                // respawn the ore
+                ShowOre();
+                health = oreData.hardness * 3; // reset health
+            }
+        }
+    }
+
+    public void Mine(int miningPower)
+    {
+        Debug.Log("Power : " + miningPower);
+
+
+        // cek apakah pickaxe cukup kuat
+        if (miningPower < oreData.hardness)
+        {
+            Debug.Log("Ore hardnes: " + oreData.hardness + " is too high for pickaxe power: " + miningPower);
         }
         else
         {
-            health -= power;
+            health -= miningPower;
         }
 
         // TODO: play sfx mining
 
 
+        // Ore mined logic
         if (health <= 0)
         {
             if (inventoryManager != null)
                 SpawnDrops();
-            Destroy(gameObject);
+
+            // hide + start respawn timer
+            HideOre();
         }
+    }
+
+    void HideOre()
+    {
+        spawnTimer = oreData.respawnTime;
+
+        foreach (Collider col in GetComponentsInChildren<Collider>())
+            col.enabled = false;
+
+        foreach (Renderer rend in GetComponentsInChildren<Renderer>())
+            rend.enabled = false;
+    }
+
+    void ShowOre()
+    {
+        foreach (Collider col in GetComponentsInChildren<Collider>())
+            col.enabled = true;
+
+        foreach (Renderer rend in GetComponentsInChildren<Renderer>())
+            rend.enabled = true;
     }
 
     void SpawnDrops()

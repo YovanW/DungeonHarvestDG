@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Stone Pickaxe
   m_EditorClassIdentifier: 
   itemName: Stone Pickaxe
-  tile: {fileID: 0}
   icon: {fileID: 21300124, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
-  prefab: {fileID: 0}
-  type: 0
+  prefab: {fileID: 5513747938526339872, guid: 28a154cc896f6114da5f7d144b3206de, type: 3}
+  type: 2
   actionType: 0
-  range: {x: 5, y: 4}
   stackable: 0
+  miningPower: 10
+  itemOffsetInHand: {x: 0, y: 0, z: 0}

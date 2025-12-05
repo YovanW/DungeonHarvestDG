@@ -5,11 +5,16 @@ public class PlayerMining : MonoBehaviour
 {
     public InventoryManager inventory = null;
     private string[] oreType = { "Stone Ore", "Coal Ore", "Bronze Ore", "Iron Ore", "Mana Crystal", "Mythril Ore" };
-    public ObjectDetector ray;  // drag reference di Inspector
+    public ObjectDetector ray;
+    public ItemInHand itemHand;   // drag the ItemInHand object here in Inspector
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ray.lookingAt != null)
+        var selectedSO = itemHand.getSelectedSO();
+
+        bool canMine = selectedSO != null && selectedSO.actionType == ItemSO.ActionType.Mine;
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ray.lookingAt != null && canMine)
         {
             Ore ore = ray.lookingAt.GetComponent<Ore>();
             if (ore != null && oreType.Contains(ore.oreData.oreName))
@@ -18,7 +23,6 @@ public class PlayerMining : MonoBehaviour
                 TryMine();
             }
         }
-
     }
 
     void TryMine()
@@ -26,11 +30,7 @@ public class PlayerMining : MonoBehaviour
         Ore ore = ray.hitInfoPublic.transform.GetComponent<Ore>();
         if (ore == null) return;
 
-        var miningPower = 5;
-
-        // TODO: mining logic
+        int miningPower = itemHand.getSelectedSO().miningPower;
         ore.Mine(miningPower);
     }
-
-
 }

@@ -16,3 +16,4 @@ MonoBehaviour:
   hardness: 25
   dropAmount: 4
   dropPrefab: {fileID: 2969400456941378272, guid: f6feefc4189936548bbf72312e17be93, type: 3}
+  respawnTime: 5
