@@ -77,6 +77,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 transform.localPosition = Vector3.zero;
                 return;
             }
+
+            // delete slot
+            if (obj.CompareTag("DeleteSlot"))
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
 
         // default fallback if nothing valid was hit

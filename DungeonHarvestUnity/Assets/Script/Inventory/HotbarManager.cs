@@ -14,6 +14,8 @@ public class HotbarManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+        
         ShortcutSelectSlot();
 
         // scroll wheel to change selected slot
