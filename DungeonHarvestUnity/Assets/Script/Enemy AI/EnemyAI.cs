@@ -8,12 +8,25 @@ public class EnemyAI : MonoBehaviour
 
     public float chaseRange = 8f;
     public float attackRange = 1.8f;
-    public float attackCooldown = 1.5f;
+    public float attackCooldown = 5f;
 
     private NavMeshAgent agent;
     private Animator anim;
     private int currentWP = 0;
     private float nextAttackTime = 0f;
+
+    public GameObject attackHitbox;
+
+public void EnableHitbox()
+{
+    attackHitbox.SetActive(true);
+}
+
+public void DisableHitbox()
+{
+    attackHitbox.SetActive(false);
+}
+
 
     void Start()
     {
