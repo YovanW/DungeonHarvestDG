@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot == null)
             {
                 // Empty slot found
-                // SpawnNewItem(item, slot);
+                SpawnNewItem(item, slot);
 
                 print("Added item");
 
@@ -43,11 +43,11 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // void SpawnNewItem(Item item, InventorySlot slot)
-        // {
-        //     GameObject newItemGameObject = Instantiate(inventoryItemPrefab, slot.transform);
-        //     InventoryItem inventoryItem = newItemGameObject.GetComponent<InventoryItem>();
-        //     inventoryItem.InitialiseItem(item);
-        // }
+        void SpawnNewItem(ItemSO item, InventorySlot slot)
+        {
+            GameObject newItemGameObject = Instantiate(inventoryItemPrefab, slot.transform);
+            InventoryItem inventoryItem = newItemGameObject.GetComponent<InventoryItem>();
+            inventoryItem.InitialiseItem(item);
+        }
     }
 }

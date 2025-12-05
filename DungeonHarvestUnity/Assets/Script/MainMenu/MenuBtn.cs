@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MenuBtn : MonoBehaviour
 {
+
     public GameObject mainCanvas;
     public GameObject playCanvas;
     public GameObject settingCanvas;
@@ -20,7 +21,7 @@ public class MenuBtn : MonoBehaviour
     public Button backBtn;
     public Button settingBackBtn;
 
-    private string savedData;
+    private string dataToLoad;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class MenuBtn : MonoBehaviour
         }
 
         // //FIXME: test change scene
-        // continueBtn.interactable = true;
+        continueBtn.interactable = true;
 
         // Hide other canvases
         playCanvas.SetActive(false);
@@ -98,14 +99,14 @@ public class MenuBtn : MonoBehaviour
         //TODO: Load saved game data
         if (PlayerPrefs.HasKey("SavedGame"))
         {
-            savedData = PlayerPrefs.GetString("SavedGame");
+            // dataToLoad = PlayerPrefs.GetString("SavedGame");
 
             // // Load the saved game scene
             // SceneManager.LoadScene("Game");
         }
 
         // FIXME: test scene load
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("nathanTest");
     }
 
     public void newGame()
