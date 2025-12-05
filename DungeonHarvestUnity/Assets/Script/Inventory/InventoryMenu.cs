@@ -26,6 +26,7 @@ public class InventoryMenu : MonoBehaviour
                 deleteSlot.SetActive(false);
                 playerStats.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
             }
             else
             {
@@ -35,6 +36,7 @@ public class InventoryMenu : MonoBehaviour
                 playerStats.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                Time.timeScale = 0f;
             }
         }
     }
