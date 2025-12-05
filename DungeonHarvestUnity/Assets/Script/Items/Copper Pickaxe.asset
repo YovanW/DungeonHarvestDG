@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Copper Pickaxe
   icon: {fileID: 21300124, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
-  prefab: {fileID: 2319598514969299889, guid: 63cf9f4b79e43a34e9d66f72f5f84c28, type: 3}
+  prefab: {fileID: 8265898909768814216, guid: a832029056b519c4c849fdc76bc3c58c, type: 3}
   type: 2
   actionType: 0
   stackable: 0
-  miningPower: 10
+  miningPower: 20
   itemOffsetInHand: {x: 0, y: 0, z: 0}

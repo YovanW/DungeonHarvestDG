@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Stone Ore
   m_EditorClassIdentifier: 
   oreName: Stone Ore
-  hardness: 5
+  hardness: 10
   dropAmount: 5
+  expGained: 0
   dropPrefab: {fileID: 4655398889592401133, guid: d6f9364aeda1be04fb58ed4e4b20a65b, type: 3}
   respawnTime: 5

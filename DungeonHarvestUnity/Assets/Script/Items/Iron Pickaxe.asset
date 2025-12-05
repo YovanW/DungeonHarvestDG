@@ -18,5 +18,5 @@ MonoBehaviour:
   type: 2
   actionType: 0
   stackable: 0
-  miningPower: 10
+  miningPower: 25
   itemOffsetInHand: {x: 0, y: 0, z: 0}
