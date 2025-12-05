@@ -73,7 +73,35 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             InventorySlot slot = obj.GetComponent<InventorySlot>();
             if (slot != null)
             {
-                transform.SetParent(slot.transform);
+                InventoryItem other = slot.GetComponentInChildren<InventoryItem>();
+
+                // kalau slot kosong langsung taruh
+                if (other == null)
+                {
+                    transform.SetParent(slot.transform);
+                    transform.localPosition = Vector3.zero;
+                    return;
+                }
+
+                // kalau slot ada item → swap
+                Transform otherParent = other.transform.parent;
+                other.transform.SetParent(parentAfterDrag);
+                other.transform.localPosition = Vector3.zero;
+
+                transform.SetParent(otherParent);
+                transform.localPosition = Vector3.zero;
+                return;
+            }
+
+
+            // if drop target is another inventory item, swap places
+            if (obj.GetComponent<InventoryItem>() != null)
+            {
+                Transform otherItemParent = obj.transform.parent;
+                obj.transform.SetParent(parentAfterDrag);
+                obj.transform.localPosition = Vector3.zero;
+
+                transform.SetParent(otherItemParent);
                 transform.localPosition = Vector3.zero;
                 return;
             }

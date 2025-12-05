@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMining : MonoBehaviour
 {
     public InventoryManager inventory = null;
-    private string[] oreType = { "Stone Ore", "Coal Ore", "Bronze Ore", "Iron Ore", "Mana Crystal", "Mythril Ore" };
+    private string[] oreType = { "Stone Ore", "Coal Ore", "Copper Ore", "Iron Ore", "Mana Crystal", "Mythril Ore" };
     public ObjectDetector ray;
     public ItemInHand itemHand;   // drag the ItemInHand object here in Inspector
 
