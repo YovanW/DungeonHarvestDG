@@ -54,7 +54,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         transform.position = Input.mousePosition;
     }
-    
+
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
@@ -73,6 +73,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 obj = obj.transform.parent.gameObject;
             }
 
+            // Case A: Dropped on another InventorySlot (slot nya)
             InventorySlot slot = obj.GetComponent<InventorySlot>();
             if (slot != null)
             {
@@ -86,6 +87,14 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     return;
                 }
 
+                // add count if the same item and stackable
+                if (TryStackTo(other))
+                {
+                    // stacked into other, so destroy this dragged UI
+                    Destroy(gameObject);
+                    return;
+                }
+
                 // kalau slot ada item → swap
                 Transform otherParent = other.transform.parent;
                 other.transform.SetParent(parentAfterDrag);
@@ -96,20 +105,30 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 return;
             }
 
-            // if drop on same item
-            
-
-
-            // if drop target is another inventory item, swap places
-            if (obj.GetComponent<InventoryItem>() != null)
+            // Case B: Dropped on another InventoryItem (gambar nya)
+            InventoryItem otherItem = obj.GetComponent<InventoryItem>();
+            if (otherItem != null)
             {
-                Transform otherItemParent = obj.transform.parent;
-                obj.transform.SetParent(parentAfterDrag);
-                obj.transform.localPosition = Vector3.zero;
+                // Try stacking
+                if (TryStackTo(otherItem))
+                {
+                    Destroy(gameObject);
+                    return;
+                }
 
-                transform.SetParent(otherItemParent);
-                transform.localPosition = Vector3.zero;
-                return;
+                int maxStack = GameObject.Find("InventoryManager").GetComponent<InventoryManager>().maxStackSize;
+                if (otherItem.item.itemName != item.itemName || count == maxStack)
+                {
+                    // swap positions
+                    Transform otherItemParent = obj.transform.parent;
+                    obj.transform.SetParent(parentAfterDrag);
+                    obj.transform.localPosition = Vector3.zero;
+
+                    transform.SetParent(otherItemParent);
+                    transform.localPosition = Vector3.zero;
+                    return;
+                }
+
             }
 
             // delete slot
@@ -120,11 +139,40 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
         }
 
-        // default fallback if nothing valid was hit
+        // default fallback
         transform.SetParent(parentAfterDrag);
         transform.localPosition = Vector3.zero;
     }
 
+    // Returns true untuk delete barang 0
+    bool TryStackTo(InventoryItem target)
+    {
+        // fail-safe check
+        if (target == null || target.item == null || this.item == null) return false;
+        if (target.item.itemName != this.item.itemName) return false;
+
+        // only item type supports stacking
+        if (!item.stackable) return false;
+
+        // max stack limit
+        int maxStack = GameObject.Find("InventoryManager").GetComponent<InventoryManager>().maxStackSize;
+        int space = maxStack - Mathf.Abs(target.count + count);
+        if (space < 0)
+        {
+            target.count = maxStack;
+            target.refreshCount();
+
+            this.count = space * -1;
+            refreshCount();
+            return false;
+        }
+
+
+        // // update item count
+        target.count += this.count;
+        target.refreshCount();
+        return true;
+    }
 
 
 }

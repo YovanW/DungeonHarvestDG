@@ -2133,7 +2133,7 @@ MonoBehaviour:
   - {fileID: 6397694492247294997}
   - {fileID: 1345738600485921714}
   inventoryItemPrefab: {fileID: 2096473768798445665, guid: 2ad9e5863b71ebf46b5239198c8cbd1b, type: 3}
-  maxStackSize: 64
+  maxStackSize: 20
 --- !u!114 &1632292630060687961
 MonoBehaviour:
   m_ObjectHideFlags: 0
