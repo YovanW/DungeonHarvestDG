@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
     public int maxStackSize = 64;
 
+
     public void AddItem(ItemSO item)
     {
         // Check for existing stackable item
@@ -36,9 +37,6 @@ public class InventoryManager : MonoBehaviour
             {
                 // Empty slot found
                 SpawnNewItem(item, slot);
-
-                print("Added item");
-
                 return;
             }
         }

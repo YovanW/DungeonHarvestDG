@@ -7,38 +7,66 @@ public class InventoryMenu : MonoBehaviour
     public GameObject deleteSlot;
     public GameObject playerStats;
 
+    public GameObject chestUI;
+
+
 
     void Start()
     {
-        Inventory.SetActive(false);
-        deleteSlot.SetActive(false);
-        playerStats.SetActive(false);
+        closeAll();
     }
 
     void Update()
     {
+        // close all pas interact sama chest
+        if (Input.GetKeyDown(KeyCode.E) && chestUI.activeSelf)
+        {
+            closeAll();
+        }
+
+        // invetory open and close
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (isOpen)
             {
-                isOpen = false;
-                Inventory.SetActive(false);
-                deleteSlot.SetActive(false);
-                playerStats.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Time.timeScale = 1f;
+                closeAll();
             }
             else
             {
                 isOpen = true;
-                Inventory.SetActive(true);
-                deleteSlot.SetActive(true);
-                playerStats.SetActive(true);
+                openInventory();
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                Time.timeScale = 0f;
             }
         }
     }
 
+    public void OpenChestUI()
+    {
+        Inventory.SetActive(true);
+        deleteSlot.SetActive(true);
+        playerStats.SetActive(true);
+        chestUI.SetActive(true);
+        isOpen = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+
+    public void closeAll()
+    {
+        isOpen = false;
+        Inventory.SetActive(false);
+        deleteSlot.SetActive(false);
+        playerStats.SetActive(false);
+        chestUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void openInventory()
+    {
+        Inventory.SetActive(true);
+        deleteSlot.SetActive(true);
+        playerStats.SetActive(true);
+    }
 }

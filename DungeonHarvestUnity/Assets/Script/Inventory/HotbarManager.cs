@@ -41,7 +41,7 @@ public class HotbarManager : MonoBehaviour
             return itemInSlot.item;
         }
 
-        Debug.Log("No item in selected slot");
+        // Debug.Log("No item in selected slot");
         return null;
     }
 

@@ -19,7 +19,7 @@ public class PlayerMining : MonoBehaviour
             Ore ore = ray.lookingAt.GetComponent<Ore>();
             if (ore != null && oreType.Contains(ore.oreData.oreName))
             {
-                Debug.Log("Mining: " + ore.oreData.oreName);
+                // Debug.Log("Mining: " + ore.oreData.oreName);
                 TryMine();
             }
         }

@@ -25,14 +25,16 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void refreshCount()
     {
+        if (countText == null) return;
         countText.text = count.ToString();
-        countText.gameObject.SetActive(count > 1);
+        if (countText.gameObject != null) countText.gameObject.SetActive(count > 1);
     }
 
     public void InitialiseItem(ItemSO newItem)
     {
         item = newItem;
-        image.sprite = newItem.icon;
+        if (image == null) image = GetComponent<Image>();
+        if (image != null && newItem != null) image.sprite = newItem.icon;
         refreshCount();
     }
 
