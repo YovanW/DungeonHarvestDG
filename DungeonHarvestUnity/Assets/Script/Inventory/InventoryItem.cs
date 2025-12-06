@@ -54,6 +54,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         transform.position = Input.mousePosition;
     }
+    
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
@@ -94,6 +95,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 transform.localPosition = Vector3.zero;
                 return;
             }
+
+            // if drop on same item
+            
 
 
             // if drop target is another inventory item, swap places
