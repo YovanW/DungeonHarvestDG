@@ -3,7 +3,7 @@ using UnityEngine;
 public class InventoryMenu : MonoBehaviour
 {
     public GameObject Inventory;
-    private bool isOpen = false;
+    public bool isOpen = false;
     public GameObject deleteSlot;
     public GameObject playerStats;
 
@@ -13,27 +13,22 @@ public class InventoryMenu : MonoBehaviour
 
     void Start()
     {
-        closeAll();
+        closeInventory();
+        chestUI.SetActive(false);
     }
 
     void Update()
     {
-        // close all pas interact sama chest
-        if (Input.GetKeyDown(KeyCode.E) && chestUI.activeSelf)
-        {
-            closeAll();
-        }
-
         // invetory open and close
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+
             if (isOpen)
             {
-                closeAll();
+                closeInventory();
             }
             else
             {
-                isOpen = true;
                 openInventory();
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -52,10 +47,8 @@ public class InventoryMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
-
-    public void closeAll()
+    public void closeChestUI()
     {
-        isOpen = false;
         Inventory.SetActive(false);
         deleteSlot.SetActive(false);
         playerStats.SetActive(false);
@@ -63,8 +56,19 @@ public class InventoryMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+
+    public void closeInventory()
+    {
+        isOpen = false;
+        Inventory.SetActive(false);
+        deleteSlot.SetActive(false);
+        playerStats.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     public void openInventory()
     {
+        isOpen = true;
         Inventory.SetActive(true);
         deleteSlot.SetActive(true);
         playerStats.SetActive(true);
