@@ -18,12 +18,6 @@ public class InventoryMenu : MonoBehaviour
 
     void Update()
     {
-        // close all pas interact sama chest
-        if (Input.GetKeyDown(KeyCode.E) && chestUI.activeSelf)
-        {
-            closeAll();
-        }
-
         // invetory open and close
         if (Input.GetKeyDown(KeyCode.Tab))
         {

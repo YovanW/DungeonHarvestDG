@@ -86,6 +86,9 @@ public class chestOpen : MonoBehaviour
         SaveItemsFromUI();
         chestUIManager.ClearChestItems();
         isOpen = false;
+
+        // close all inventory UI
+        GameObject.Find("CanvasController").GetComponent<InventoryMenu>().closeAll();
     }
 
     void LoadItemsToUI()
