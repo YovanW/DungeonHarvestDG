@@ -75,6 +75,9 @@ public class chestOpen : MonoBehaviour
         // if first time opening, load from generated items
         if (!saveOnce)
         {
+            // open chest
+            this.GetComponent<chestOpenAnimation>().openState();
+
             for (int i = 0; i < currentItems.Count; i++)
                 chestUIManager.AddChestItem(currentItems[i].item, currentItems[i].count);
 
