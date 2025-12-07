@@ -12,6 +12,8 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
+        InventoryMenu inventoryMenu = GameObject.Find("CanvasController").GetComponent<InventoryMenu>();
+
         if (Input.GetKeyDown(KeyCode.E) && ray.lookingAt != null)
         {
             // Door Interaction
@@ -30,18 +32,17 @@ public class PlayerInteract : MonoBehaviour
                 chestOpen chest = ray.lookingAt.GetComponent<chestOpen>();
                 if (chest == null) return;
 
-                Debug.Log(chest.isOpen);
 
-                if (!chest.isOpen)
+                if (!chest.isOpen && !inventoryMenu.Inventory.activeSelf)
                 {
-                    GameObject inventoryMenu = GameObject.Find("CanvasController");
-                    inventoryMenu.GetComponent<InventoryMenu>().OpenChestUI();
+                    inventoryMenu.OpenChestUI();
 
                     chest.OpenChest();
                 }
-                else
+                else if (chest.isOpen && inventoryMenu.chestUI.activeSelf)
                 {
                     chest.CloseChest();
+                    inventoryMenu.closeChestUI();
                 }
             }
         }
@@ -52,9 +53,11 @@ public class PlayerInteract : MonoBehaviour
             chestOpen chest = ray.lookingAt.GetComponent<chestOpen>();
             if (chest == null) return;
 
-            if (chest.isOpen)
+            if (chest.isOpen && inventoryMenu.chestUI.activeSelf)
             {
                 chest.CloseChest();
+                chest.isOpen = false;
+                inventoryMenu.closeChestUI();
             }
         }
     }

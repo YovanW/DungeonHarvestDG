@@ -9,6 +9,8 @@ public class chestOpen : MonoBehaviour
     private List<InventoryItem> currentItems;
     public bool isOpen = false;
     private ChestUIManager chestUIManager;
+    private bool generatedOnce;
+    private bool saveOnce;
 
     class savedItemSlot
     {
@@ -27,7 +29,12 @@ public class chestOpen : MonoBehaviour
     void Awake()
     {
         chestUIManager = GameObject.Find("InventoryManager").GetComponent<ChestUIManager>();
-        GenerateChestItems();
+
+        if (!generatedOnce)
+        {
+            GenerateChestItems();
+            generatedOnce = true;
+        }
     }
 
     public void printChestItems()
@@ -66,16 +73,20 @@ public class chestOpen : MonoBehaviour
         chestUIManager.ClearChestItems();
 
         // if first time opening, load from generated items
-        if (saveItemInSlot.Count == 0)
+        if (!saveOnce)
         {
             for (int i = 0; i < currentItems.Count; i++)
                 chestUIManager.AddChestItem(currentItems[i].item, currentItems[i].count);
+
+            saveOnce = true;
         }
         else
         {
             LoadItemsToUI();
         }
 
+
+        GameObject.Find("CanvasController").GetComponent<InventoryMenu>().isOpen = true;
         isOpen = true;
     }
 
@@ -86,12 +97,9 @@ public class chestOpen : MonoBehaviour
         SaveItemsFromUI();
         chestUIManager.ClearChestItems();
         isOpen = false;
-
-        // close all inventory UI
-        GameObject.Find("CanvasController").GetComponent<InventoryMenu>().closeAll();
     }
 
-    void LoadItemsToUI()
+    public void LoadItemsToUI()
     {
         for (int i = 0; i < saveItemInSlot.Count; i++)
         {
@@ -100,7 +108,7 @@ public class chestOpen : MonoBehaviour
         }
     }
 
-    void SaveItemsFromUI()
+    public void SaveItemsFromUI()
     {
         saveItemInSlot.Clear();
 
