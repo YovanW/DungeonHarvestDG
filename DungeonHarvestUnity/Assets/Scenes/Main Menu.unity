@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe3aeb1d4087b46b5761df4a61a910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   fullscreenBtn: {fileID: 9215475990249465046}
   windowedBtn: {fileID: 3707532706965108804}
   borderlessBtn: {fileID: 5253866220756747101}
@@ -1175,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 5477156105716681153, guid: b06a483e08e3e774a947be04f1a0564d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254476773605529068, guid: b06a483e08e3e774a947be04f1a0564d, type: 3}
+      propertyPath: m_text
+      value: CONTINUE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
