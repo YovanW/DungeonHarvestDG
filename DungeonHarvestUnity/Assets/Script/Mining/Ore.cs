@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Ore : MonoBehaviour
@@ -49,10 +50,13 @@ public class Ore : MonoBehaviour
         else
         {
             health -= miningPower;
+
+            // play hit animation
+            StartCoroutine(HitAnimation());
+
+            // TODO: play sfx mining
+
         }
-
-        // TODO: play sfx mining
-
 
         // Ore mined logic
         if (health <= 0)
@@ -64,6 +68,14 @@ public class Ore : MonoBehaviour
             HideOre();
         }
     }
+
+    IEnumerator HitAnimation()
+    {
+        // TODO: add animation
+
+        yield return null;
+    }
+
 
     void HideOre()
     {
