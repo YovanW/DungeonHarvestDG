@@ -84,24 +84,39 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(move * currentSpeed * Time.deltaTime);
     }
 
-private float lastJumpTime;
-public float jumpCooldown = 0.2f;
+    private float lastJumpTime;
+    public float jumpCooldown = 0.2f;
 
-void HandleJump()
-{
-    if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastJumpTime + jumpCooldown)
+    private int jumpCount = 0;
+    private int maxJumps = 1; // For double jump
+
+    void HandleJump()
     {
-        if (healthStaminaManager != null)
+        // Reset jump count when grounded
+        if (controller.isGrounded)
         {
-            if (!healthStaminaManager.UseStamina(jumpStaminaCost))
-                return;
+            jumpCount = 0;
         }
-        
-        Debug.Log("JUMP");
-        velocity.y = Mathf.Sqrt(jumpForce * -0.5f * gravity);
-        lastJumpTime = Time.time;
+
+        if (Time.time < lastJumpTime + jumpCooldown) return;
+
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
+        {
+            if (healthStaminaManager != null)
+            {
+                if (!healthStaminaManager.UseStamina(jumpStaminaCost))
+                    return;
+            }
+
+            Debug.Log("JUMP " + (jumpCount + 1));
+
+            velocity.y = 0;
+            velocity.y = Mathf.Sqrt(jumpForce * -1f * gravity);
+
+            lastJumpTime = Time.time;
+            jumpCount++;
+        }
     }
-}
 
     void HandleDodge()
     {
