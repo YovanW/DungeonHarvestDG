@@ -17,14 +17,19 @@ public class PlayerMining : MonoBehaviour
 
         bool canMine = selectedSO != null && selectedSO.actionType == ItemSO.ActionType.Mine;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ray.lookingAt != null && canMine)
+        if (Input.GetKey(KeyCode.Mouse0) && ray.lookingAt != null && canMine)
         {
             Ore ore = ray.lookingAt.GetComponent<Ore>();
             if (ore != null && oreType.Contains(ore.oreData.oreName))
             {
                 // Debug.Log("Mining: " + ore.oreData.oreName);
-                TryMine();
-                StartCoroutine(SwingAnimation());
+
+                if (!isSwinging)
+                {
+                    TryMine();
+                    StartCoroutine(SwingAnimation());
+                }
+
             }
         }
     }
