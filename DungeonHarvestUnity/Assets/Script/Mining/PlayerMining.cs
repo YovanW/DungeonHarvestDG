@@ -32,9 +32,6 @@ public class PlayerMining : MonoBehaviour
 
             }
         }
-
-        // hold left click
-        
     }
 
     void TryMine()
