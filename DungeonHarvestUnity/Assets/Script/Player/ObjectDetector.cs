@@ -66,7 +66,7 @@ public class ObjectDetector : MonoBehaviour
         // Chest
         if (lookingAt.TryGetComponent(out chestOpen chest))
         {
-            intractInfo.text = "Press \"E\" to open chest";
+            intractInfo.text = "Press \"E\" to Open Chest";
             return;
         }
 
@@ -74,8 +74,8 @@ public class ObjectDetector : MonoBehaviour
         if (lookingAt.TryGetComponent(out doorMove door))
         {
             intractInfo.text = door.isDoorOpenNow()
-                ? "Press \"E\" to close"
-                : "Press \"E\" to open";
+                ? "Press \"E\" to Close"
+                : "Press \"E\" to Open";
             return;
         }
     }
