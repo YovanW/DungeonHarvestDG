@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SelectedImage
   - DeleteSlot
+  - InventoryManager
+  - CanvasController
   layers:
   - Default
   - TransparentFX

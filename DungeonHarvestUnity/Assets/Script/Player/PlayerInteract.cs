@@ -43,6 +43,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     chest.CloseChest();
                     inventoryMenu.closeChestUI();
+                    GameObject.Find("CanvasController").GetComponent<InventoryMenu>().isOpen = false;
                 }
             }
         }

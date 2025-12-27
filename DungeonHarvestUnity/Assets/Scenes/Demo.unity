@@ -3864,29 +3864,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2347643189140116369, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347643189140116369, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 7bb5a1a0486ecbf4889f58dbceafc18d, type: 2}
-    - target: {fileID: 2347643189140116369, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
-      propertyPath: m_UseGeometry
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012853325931984760, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012853325931984760, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012853325931984760, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.525
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012853325931984760, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.05
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: e1c05429186808846ae188f41f25f34a, type: 2}
     - target: {fileID: 4073767145040804422, guid: 001181cf971698941a0146dbe2bf8e2c, type: 3}
       propertyPath: m_Name
       value: Floor1

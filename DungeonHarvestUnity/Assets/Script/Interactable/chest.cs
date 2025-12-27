@@ -100,6 +100,7 @@ public class chestOpen : MonoBehaviour
         SaveItemsFromUI();
         chestUIManager.ClearChestItems();
         isOpen = false;
+
     }
 
     public void LoadItemsToUI()

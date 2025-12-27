@@ -15,6 +15,15 @@ public class doorMove : MonoBehaviour
         closeDoorPos = door.transform.rotation.eulerAngles.y;
     }
 
+    public bool isDoorOpenNow()
+    {
+        if (isDoorOpen)
+        {
+            return true;
+        }
+        else return false;
+    }
+
     public void ToggleDoor()
     {
         if (isAnimating) return;

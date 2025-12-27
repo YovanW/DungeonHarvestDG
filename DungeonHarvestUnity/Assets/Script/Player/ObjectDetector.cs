@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class ObjectDetector : MonoBehaviour
@@ -12,6 +13,8 @@ public class ObjectDetector : MonoBehaviour
     // data untuk PlayerMining script
     public bool hitSomething;
     public RaycastHit hitInfoPublic;
+
+    public TextMeshProUGUI intractInfo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +49,34 @@ public class ObjectDetector : MonoBehaviour
 
             // // always update gizmo for testing
             // collision = transform.position + transform.forward * maxInteractRange;
+        }
+
+        // Hide intractInfo when inventory is open
+        if (GameObject.FindGameObjectWithTag("CanvasController").GetComponent<InventoryMenu>().isOpen) { intractInfo.gameObject.SetActive(false); }
+        else { intractInfo.gameObject.SetActive(true); }
+        
+        UpdateIntractInfo();
+    }
+
+    void UpdateIntractInfo()
+    {
+        // Default Empty
+        if (lookingAt == null) intractInfo.text = "";
+
+        // Chest
+        if (lookingAt.TryGetComponent(out chestOpen chest))
+        {
+            intractInfo.text = "Press \"E\" to open chest";
+            return;
+        }
+
+        // Door
+        if (lookingAt.TryGetComponent(out doorMove door))
+        {
+            intractInfo.text = door.isDoorOpenNow()
+                ? "Press \"E\" to close"
+                : "Press \"E\" to open";
+            return;
         }
     }
 
