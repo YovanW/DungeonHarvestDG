@@ -5602,6 +5602,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4702625872028927964, guid: 83837d53232713747888bd798aac0f03, type: 3}
+      propertyPath: m_TagString
+      value: InventoryManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4981237764784962818, guid: 83837d53232713747888bd798aac0f03, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

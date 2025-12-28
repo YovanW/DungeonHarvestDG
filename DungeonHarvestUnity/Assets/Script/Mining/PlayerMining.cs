@@ -10,7 +10,7 @@ public class PlayerMining : MonoBehaviour
     public ItemInHand itemHand;
 
     bool isSwinging = false;
-    private float maxMineDistance = 1.4f;
+    private float maxMineDistance = 2f;
 
     void Update()
     {
@@ -60,32 +60,19 @@ public class PlayerMining : MonoBehaviour
         Vector3 startPos = pickaxe.localPosition;
         Quaternion startRot = pickaxe.localRotation;
 
-        // 1) pull back and up (slightly inward)
-        Vector3 backPos = startPos + new Vector3(
-            -0.06f,   // move toward screen center
-             0.16f,
-            -0.10f
-        );
+        // 1) pull back and up
+        Vector3 backPos = startPos + new Vector3(-0.06f, 0.16f, -0.10f);
+        Quaternion backRot = Quaternion.Euler(startRot.eulerAngles + new Vector3(-22f, 0f, 8f));
 
-        Quaternion backRot = Quaternion.Euler(
-            startRot.eulerAngles + new Vector3(-22f, 0f, 8f)
-        );
+        // 2) swing down to hit
+        Vector3 hitPos = startPos + new Vector3(-0.25f, 0.177f, 0.298f);
 
-        // 2) swing down to hit (CENTERED)
-        Vector3 hitPos = startPos + new Vector3(
-            -0.12f,   // THIS pulls it to the middle
-            -0.10f,   // small downward, not a dive
-             0.65f    // reasonable forward reach
-        );
-
-        Quaternion hitRot = Quaternion.Euler(
-            startRot.eulerAngles + new Vector3(60f, 0f, -18f)
-        );
-
-        float t;
+        Vector3 localHitDir = (hitPos - startPos).normalized;
+        Quaternion aimRot = Quaternion.LookRotation(localHitDir);
+        Quaternion hitRot = Quaternion.Slerp(startRot, aimRot * Quaternion.Euler(90f, 0f, 0f), 0.45f);
 
         // pull back
-        t = 0f;
+        float t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * 8f;

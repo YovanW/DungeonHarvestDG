@@ -12,6 +12,11 @@ public class Ore : MonoBehaviour
 
     void Start()
     {
+        if (inventoryManager == null)
+        {
+            inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
+        }
+
         health = oreData.hardness * 3;
 
         if (inventoryManager == null)
