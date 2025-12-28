@@ -56,29 +56,55 @@ public class Ore : MonoBehaviour
         {
             health -= miningPower;
 
-            // play hit animation
-            StartCoroutine(HitAnimation());
-
-            // TODO: play sfx mining
+            // Start coroutine that handles hit animation and ore destruction
+            StartCoroutine(HitAndCheckOre());
 
         }
+    }
 
-        // Ore mined logic
+    IEnumerator HitAndCheckOre()
+    {
+        yield return HitAnimation(); // tunggu animasi selesai
+
         if (health <= 0)
         {
             if (inventoryManager != null)
                 SpawnDrops();
 
-            // hide + start respawn timer
             HideOre();
         }
     }
 
+
     IEnumerator HitAnimation()
     {
-        // TODO: add animation
+        yield return new WaitForSeconds(0.14f); // start delay (tunggu animasi pickaxe hit dulu)
 
-        yield return null;
+        // TODO: play sfx mining
+
+        Vector3 startPos = transform.localPosition;
+
+        float duration = 0.12f;
+        float strength = 0.06f;
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+
+            float fade = 1f - (t / duration);
+
+            Vector3 offset = new Vector3(
+                Random.Range(-strength, strength) * fade,
+                0f,
+                Random.Range(-strength, strength) * fade
+            );
+
+            transform.localPosition = startPos + offset;
+            yield return null;
+        }
+
+        transform.localPosition = startPos;
     }
 
 
@@ -108,7 +134,7 @@ public class Ore : MonoBehaviour
 
         for (int i = 0; i < dropCount; i++)
         {
-            // TODO: spawn mining ore drop
+            // spawn mining ore drop
             int itemId = Random.Range(0, itemsToPickup.Length);
             inventoryManager.AddItem(itemsToPickup[itemId]);
         }
