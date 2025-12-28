@@ -10,6 +10,7 @@ public class PlayerMining : MonoBehaviour
     public ItemInHand itemHand;
 
     bool isSwinging = false;
+    private float maxMineDistance = 1.4f;
 
     void Update()
     {
@@ -27,7 +28,6 @@ public class PlayerMining : MonoBehaviour
                 if (!isSwinging)
                 {
                     TryMine();
-                    StartCoroutine(SwingAnimation());
                 }
 
             }
@@ -39,11 +39,18 @@ public class PlayerMining : MonoBehaviour
         Ore ore = ray.hitInfoPublic.transform.GetComponent<Ore>();
         if (ore == null) return;
 
+        float dist = Vector3.Distance(transform.position, ray.hitInfoPublic.transform.position);
+        // Debug.Log(dist);
+        // Debug.Log(maxMineDistance);
+
+        if (dist > maxMineDistance) return;
+
+        StartCoroutine(SwingAnimation(ray.hitInfoPublic.transform));
         int miningPower = itemHand.getSelectedSO().miningPower;
         ore.Mine(miningPower);
     }
 
-    IEnumerator SwingAnimation()
+    IEnumerator SwingAnimation(Transform hitpos)
     {
         if (isSwinging) yield break;
         isSwinging = true;
@@ -53,44 +60,61 @@ public class PlayerMining : MonoBehaviour
         Vector3 startPos = pickaxe.localPosition;
         Quaternion startRot = pickaxe.localRotation;
 
-        // 1) pull back and up
-        Vector3 backPos = startPos + new Vector3(0f, 0.18f, -0.12f);
-        Quaternion backRot = Quaternion.Euler(startRot.eulerAngles + new Vector3(-20f, 0f, 10f));
+        // 1) pull back and up (slightly inward)
+        Vector3 backPos = startPos + new Vector3(
+            -0.06f,   // move toward screen center
+             0.16f,
+            -0.10f
+        );
 
-        // 2) swing down to hit
-        Vector3 hitPos = startPos + new Vector3(0f, -0.32f, 1f);
-        Quaternion hitRot = Quaternion.Euler(startRot.eulerAngles + new Vector3(55f, 0f, -22f));
+        Quaternion backRot = Quaternion.Euler(
+            startRot.eulerAngles + new Vector3(-22f, 0f, 8f)
+        );
+
+        // 2) swing down to hit (CENTERED)
+        Vector3 hitPos = startPos + new Vector3(
+            -0.12f,   // THIS pulls it to the middle
+            -0.10f,   // small downward, not a dive
+             0.65f    // reasonable forward reach
+        );
+
+        Quaternion hitRot = Quaternion.Euler(
+            startRot.eulerAngles + new Vector3(60f, 0f, -18f)
+        );
 
         float t;
 
-        // back + up
-        t = 0;
+        // pull back
+        t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * 8f;
-            float ease = 1 - Mathf.Pow(1 - t, 2);   // easing out
+            float ease = 1f - Mathf.Pow(1f - t, 2f);
+
             pickaxe.localPosition = Vector3.Lerp(startPos, backPos, ease);
             pickaxe.localRotation = Quaternion.Lerp(startRot, backRot, ease);
             yield return null;
         }
 
-        // swing down
-        t = 0;
+        // strike
+        t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * 13f;
-            float ease = Mathf.Pow(t, 3);   // accelerating into hit
+            float ease = t * t * t;
+
             pickaxe.localPosition = Vector3.Lerp(backPos, hitPos, ease);
             pickaxe.localRotation = Quaternion.Lerp(backRot, hitRot, ease);
             yield return null;
         }
 
-        // return to starting pose
-        t = 0;
+        // recover
+        t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * 9f;
-            float ease = 1 - Mathf.Pow(1 - t, 2);
+            float ease = 1f - Mathf.Pow(1f - t, 2f);
+
             pickaxe.localPosition = Vector3.Lerp(hitPos, startPos, ease);
             pickaxe.localRotation = Quaternion.Lerp(hitRot, startRot, ease);
             yield return null;

@@ -54,14 +54,18 @@ public class ObjectDetector : MonoBehaviour
         // Hide intractInfo when inventory is open
         if (GameObject.FindGameObjectWithTag("CanvasController").GetComponent<InventoryMenu>().isOpen) { intractInfo.gameObject.SetActive(false); }
         else { intractInfo.gameObject.SetActive(true); }
-        
+
         UpdateIntractInfo();
     }
 
     void UpdateIntractInfo()
     {
         // Default Empty
-        if (lookingAt == null) intractInfo.text = "";
+        if (lookingAt == null)
+        {
+            intractInfo.text = "";
+            return;
+        }
 
         // Chest
         if (lookingAt.TryGetComponent(out chestOpen chest))
