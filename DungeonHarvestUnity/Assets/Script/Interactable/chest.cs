@@ -28,7 +28,7 @@ public class chestOpen : MonoBehaviour
 
     void Awake()
     {
-        chestUIManager = GameObject.Find("InventoryManager").GetComponent<ChestUIManager>();
+        chestUIManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<ChestUIManager>();
 
         if (!generatedOnce)
         {

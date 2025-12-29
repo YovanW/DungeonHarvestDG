@@ -4,12 +4,15 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler
 {
     public ItemSO item;
     public Image image;
     public Transform parentAfterDrag;
     public int count = 1;
     public TextMeshProUGUI countText;
+    public static bool IsDraggingItem = false;
+
 
     public void Start()
     {
@@ -38,8 +41,38 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         refreshCount();
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (IsDraggingItem) return;
+
+        if (item == null || ItemTooltip.Instance == null) return;
+        ItemTooltip.Instance.Show(item.itemName, eventData.position);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (IsDraggingItem) return;
+
+        if (ItemTooltip.Instance == null) return;
+        ItemTooltip.Instance.Hide();
+    }
+
+    public void OnPointerMove(PointerEventData eventData)
+    {
+        if (IsDraggingItem) return;
+
+        if (ItemTooltip.Instance != null)
+            ItemTooltip.Instance.UpdatePosition(eventData.position);
+    }
+
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+        IsDraggingItem = true;
+
+        ItemTooltip.Instance?.Hide();
+        transform.position = eventData.position;
+
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
 
@@ -52,11 +85,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnDrag(PointerEventData eventData)
     {
+        IsDraggingItem = true;
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        IsDraggingItem = false;
         image.raycastTarget = true;
 
         CanvasGroup cg = GetComponent<CanvasGroup>();
