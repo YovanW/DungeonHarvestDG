@@ -80,7 +80,7 @@ public class Ore : MonoBehaviour
     {
         yield return new WaitForSeconds(0.14f); // start delay (tunggu animasi pickaxe hit dulu)
 
-        // TODO: play sfx mining (ore hit)
+        // TODO: play sfx mining
 
         Vector3 startPos = transform.localPosition;
 
