@@ -46,6 +46,7 @@ public class PlayerInteract : MonoBehaviour
                     GameObject.Find("CanvasController").GetComponent<InventoryMenu>().isOpen = false;
                 }
             }
+
         }
 
         // fail-safe checker for Tab close all inventory

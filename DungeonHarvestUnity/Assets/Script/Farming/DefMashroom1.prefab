@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4860277000173956129}
   - component: {fileID: 432489834339197695}
   - component: {fileID: 6523812147582647361}
+  - component: {fileID: -2285154482573768214}
   m_Layer: 0
   m_Name: DefMashroom1
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 317907342021811887}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000037748947, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9800005, y: 0.259, z: 0.04760027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.31647235, y: 0.31647232, z: 0.31647232}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,3 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-2285154482573768214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317907342021811887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ebaf57a953fa044bb491c9c4b73eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0.2522, z: 0}
+  cropPrefab:
+  - {fileID: 317907342021811887}
+  - {fileID: 6585291225146864385, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
+  - {fileID: 8985312970316279273, guid: 5713614e4c557984cbadb949509d2e9b, type: 3}

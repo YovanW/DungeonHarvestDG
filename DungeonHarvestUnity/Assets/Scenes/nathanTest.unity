@@ -434,7 +434,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.9831004, y: 0, z: 0}
-  m_LocalScale: {x: 3.4757192, y: 0.562504, z: 0.6128386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969646306}
@@ -674,8 +674,8 @@ Transform:
   m_GameObject: {fileID: 203931424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -1.0709999, y: 0.02, z: 0.04760027}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: -1.0709999, y: 0, z: 0.04760027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1531330889}
@@ -711,7 +711,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06360006, y: 0, z: 0}
-  m_LocalScale: {x: 3.4757192, y: 0.562504, z: 0.6128386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969646306}
@@ -2084,9 +2084,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
   plantArea: {fileID: 218324403}
   isRaked: 0
+  readyToHarvest: 0
   soilQuality: 0
+  seedPrefab: {fileID: 0}
+  cropGrids:
+  - {fileID: 105196971}
+  - {fileID: 213145406}
+  - {fileID: 1871412989}
 --- !u!65 &597751437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2740,8 +2747,8 @@ Transform:
   m_GameObject: {fileID: 876477839}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0709999, y: 0, z: 1.0476003}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: -1.0709999, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 948691719}
@@ -3007,7 +3014,7 @@ Transform:
   m_GameObject: {fileID: 948691718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.003099918, y: 0, z: 1.0476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3041,7 +3048,7 @@ Transform:
   m_GameObject: {fileID: 969646305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0030999184, y: 0.01, z: -0.9724002}
+  m_LocalPosition: {x: -0.0030999184, y: 0, z: -0.9724002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6459,8 +6466,8 @@ Transform:
   m_GameObject: {fileID: 1561896513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0030999184, y: 0, z: 1.0476003}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: -0.0030999184, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 948691719}
@@ -7116,8 +7123,8 @@ Transform:
   m_GameObject: {fileID: 1745869549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.06669998, y: 0.02, z: 0.04760027}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: -0.06669998, y: 0, z: 0.04760027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1531330889}
@@ -7272,7 +7279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0679001, y: 0, z: 0}
-  m_LocalScale: {x: 3.4757192, y: 0.562504, z: 0.6128386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969646306}
@@ -7945,9 +7952,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
   plantArea: {fileID: 1661055005}
   isRaked: 0
+  readyToHarvest: 0
   soilQuality: 0
+  seedPrefab: {fileID: 0}
+  cropGrids:
+  - {fileID: 2127534734}
+  - {fileID: 1561896513}
+  - {fileID: 876477839}
 --- !u!65 &2066954389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8231,9 +8245,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
   plantArea: {fileID: 1789471679}
   isRaked: 0
+  readyToHarvest: 0
   soilQuality: 0
+  seedPrefab: {fileID: 0}
+  cropGrids:
+  - {fileID: 2146888858}
+  - {fileID: 1745869549}
+  - {fileID: 203931424}
 --- !u!65 &2095533240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8427,8 +8448,8 @@ Transform:
   m_GameObject: {fileID: 2127534734}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9800005, y: 0, z: 1.0476003}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: 0.9800005, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 948691719}
@@ -8458,8 +8479,8 @@ Transform:
   m_GameObject: {fileID: 2146888858}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0.9800005, y: 0.02, z: 0.04760027}
-  m_LocalScale: {x: 1.0719063, y: 1, z: 0.6961001}
+  m_LocalPosition: {x: 0.9800005, y: 0, z: 0.04760027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1531330889}
@@ -8486,7 +8507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554843201677208408, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0056729456
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8554843201677208408, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8494,7 +8515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554843201677208408, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000023290419
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8554843201677208408, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
       propertyPath: m_LocalRotation.w

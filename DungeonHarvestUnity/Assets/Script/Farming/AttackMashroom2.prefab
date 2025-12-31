@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 168715632762256554}
   - component: {fileID: 8526850869728018931}
   - component: {fileID: 8043251350373810953}
+  - component: {fileID: -662667650457990601}
   m_Layer: 0
   m_Name: AttackMashroom2
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3518189714280644936}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000037748947, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06669998, y: 0.227, z: -0.9724002}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5898798, y: 0.58988005, z: 0.5898799}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,3 +87,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-662667650457990601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518189714280644936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ebaf57a953fa044bb491c9c4b73eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0.214, z: 0}
+  cropPrefab: []
