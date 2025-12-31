@@ -11,10 +11,11 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public Sprite icon;
     public GameObject prefab;
-    public ItemType type; 
+    public ItemType type;
     public ActionType actionType;
     public bool stackable = true;
     public int miningPower;
+    public int extraInfo;
 
     // item offsett in hand
     public Vector3 itemOffsetInHand;
@@ -34,6 +35,7 @@ public class ItemSO : ScriptableObject
     {
         Mine,
         Chop,
+        Rake,
         Attack,
         None
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1755992775580937799
+--- !u!1 &6959528322105333068
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3610118239446158147}
-  - component: {fileID: 3979851121381720180}
-  - component: {fileID: 4879820063792124825}
+  - component: {fileID: 7266240149139923138}
+  - component: {fileID: 1677512811081363218}
+  - component: {fileID: 6401956082473752138}
   m_Layer: 0
   m_Name: HealthMashroom1
   m_TagString: Untagged
@@ -18,36 +18,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3610118239446158147
+--- !u!4 &7266240149139923138
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755992775580937799}
+  m_GameObject: {fileID: 6959528322105333068}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.244, z: 0}
-  m_LocalScale: {x: 0.104862936, y: 0.11240324, z: 0.16147567}
+  m_LocalPosition: {x: 0.9800005, y: 0.244, z: 1.0476003}
+  m_LocalScale: {x: 0.112403244, y: 0.11240324, z: 0.11240324}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3979851121381720180
+--- !u!33 &1677512811081363218
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755992775580937799}
+  m_GameObject: {fileID: 6959528322105333068}
   m_Mesh: {fileID: -2770715834684587290, guid: 09b71c1c2c1557142a9242485f7ad215, type: 3}
---- !u!23 &4879820063792124825
+--- !u!23 &6401956082473752138
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755992775580937799}
+  m_GameObject: {fileID: 6959528322105333068}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
