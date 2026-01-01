@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1677512811081363218}
   - component: {fileID: 6401956082473752138}
   - component: {fileID: -5399421771471510830}
+  - component: {fileID: 4599050987642862555}
   m_Layer: 0
   m_Name: HealthMashroom1
   m_TagString: Untagged
@@ -104,3 +105,17 @@ MonoBehaviour:
   - {fileID: 6959528322105333068}
   - {fileID: 3897685297629434158, guid: e7d37f46ffdaafe408dfebba59c3529b, type: 3}
   - {fileID: 2425997488451385028, guid: c34f4561f4bf3ec409513cd1e79ca1c1, type: 3}
+--- !u!114 &4599050987642862555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959528322105333068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada5c198356110540845265a9b1a1759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestItem: {fileID: 11400000, guid: 468f5344a8ba0b74aaf0020c03dd8547, type: 2}
+  seedItem: {fileID: 11400000, guid: ffc5d9bf99fb23841b9939e20442178a, type: 2}

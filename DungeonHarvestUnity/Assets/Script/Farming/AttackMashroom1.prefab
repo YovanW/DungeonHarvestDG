@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4496880531634850468}
   - component: {fileID: 3696094385650164334}
   - component: {fileID: -4797970302768438550}
+  - component: {fileID: -2846434871320284826}
   m_Layer: 0
   m_Name: AttackMashroom1
   m_TagString: Untagged
@@ -104,3 +105,17 @@ MonoBehaviour:
   - {fileID: 1160063300117948525}
   - {fileID: 3518189714280644936, guid: b9cf2f88df9e9cb449ef7613938ec7e7, type: 3}
   - {fileID: 1625319785095369975, guid: cdad3ce710378a84083f1c78903d6b9c, type: 3}
+--- !u!114 &-2846434871320284826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160063300117948525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada5c198356110540845265a9b1a1759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestItem: {fileID: 11400000, guid: ba6d4065654c3e84f9e32e8ec55b5d83, type: 2}
+  seedItem: {fileID: 11400000, guid: de8ae1899bba91942820f0f12c9dd297, type: 2}

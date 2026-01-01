@@ -48,4 +48,53 @@ public class InventoryManager : MonoBehaviour
             inventoryItem.InitialiseItem(item);
         }
     }
+
+    public void RemoveItem(ItemSO item, int slotIndex = -1)
+    {
+        if (slotIndex != -1)
+        {
+            // Remove item from specific slot
+            InventorySlot slot = inventorySlots[slotIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
+            if (itemInSlot != null && itemInSlot.item == item)
+            {
+                if (itemInSlot.count > 1)
+                {
+                    // Reduce count
+                    itemInSlot.count--;
+                    itemInSlot.refreshCount();
+                }
+                else
+                {
+                    // Remove item
+                    Destroy(itemInSlot.gameObject);
+                }
+            }
+            return;
+        }
+
+        // Find the item in inventory (no specific slot)
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
+            if (itemInSlot != null && itemInSlot.item == item)
+            {
+                if (itemInSlot.count > 1)
+                {
+                    // Reduce count
+                    itemInSlot.count--;
+                    itemInSlot.refreshCount();
+                }
+                else
+                {
+                    // Remove item
+                    Destroy(itemInSlot.gameObject);
+                }
+                return;
+            }
+        }
+    }
 }

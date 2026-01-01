@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 432489834339197695}
   - component: {fileID: 6523812147582647361}
   - component: {fileID: -2285154482573768214}
+  - component: {fileID: -2156064811195136126}
   m_Layer: 0
   m_Name: DefMashroom1
   m_TagString: Untagged
@@ -104,3 +105,17 @@ MonoBehaviour:
   - {fileID: 317907342021811887}
   - {fileID: 6585291225146864385, guid: a58d2b46f9d905147b278b5e6f3b4f47, type: 3}
   - {fileID: 8985312970316279273, guid: 5713614e4c557984cbadb949509d2e9b, type: 3}
+--- !u!114 &-2156064811195136126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317907342021811887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada5c198356110540845265a9b1a1759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestItem: {fileID: 11400000, guid: 50fd938013514984db1104831ae47fa6, type: 2}
+  seedItem: {fileID: 11400000, guid: 11c2e3daaa1d1bb41b449d2e14c96072, type: 2}

@@ -4,7 +4,7 @@ public class HotbarManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
     public GameObject selectedImage;
-    private int selectedIndex = 0;
+    public int selectedIndex = 0;
 
     void Start()
     {
