@@ -16,13 +16,11 @@ public class ObjectDetector : MonoBehaviour
 
     public TextMeshProUGUI intractInfo;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -98,7 +96,7 @@ public class ObjectDetector : MonoBehaviour
             {
                 intractInfo.text = "Press \"E\" to Harvest Crop";
             }
-           
+
             return;
         }
     }

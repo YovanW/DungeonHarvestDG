@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be40ae6f43a153469666596d9eb695f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ffc5d9bf99fb23841b9939e20442178a, type: 2}
+  item: {fileID: 11400000, guid: 86e0589e108e0e74f99ca1c78af7dbdc, type: 2}
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
   count: 1
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d09aa7547969d48a1748bf6e973e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
   ray: {fileID: 1705751354}
   itemHand: {fileID: 1382552766}
 --- !u!1 &475755167
@@ -2084,11 +2085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
   plantArea: {fileID: 218324403}
   isRaked: 0
   readyToHarvest: 0
   soilQuality: 0
+  growthTimer: 0
+  growthDuration: 10
+  status: start
   seedPrefab: {fileID: 0}
   cropGrids:
   - {fileID: 105196971}
@@ -3458,15 +3461,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 515395034312557018, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 515395034312557018, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 515395034312557018, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 580717644188972761, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3518,15 +3521,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 877015627067204649, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 877015627067204649, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 877015627067204649, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1014825341701561517, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3698,15 +3701,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1464936298705117485, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1464936298705117485, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1464936298705117485, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1590738568075470813, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3974,15 +3977,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3390124620434541517, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3390124620434541517, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3390124620434541517, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3483974312469861795, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4750,15 +4753,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8474471842791356591, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8474471842791356591, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8474471842791356591, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8607032164258861488, guid: 2e662af4cc7401f4b9906c414b630cce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7952,11 +7955,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
   plantArea: {fileID: 1661055005}
   isRaked: 0
   readyToHarvest: 0
   soilQuality: 0
+  growthTimer: 0
+  growthDuration: 10
+  status: start
   seedPrefab: {fileID: 0}
   cropGrids:
   - {fileID: 2127534734}
@@ -8245,11 +8250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bcf5b954b4c141948ec4a196ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
   plantArea: {fileID: 1789471679}
   isRaked: 0
   readyToHarvest: 0
   soilQuality: 0
+  growthTimer: 0
+  growthDuration: 10
+  status: start
   seedPrefab: {fileID: 0}
   cropGrids:
   - {fileID: 2146888858}
