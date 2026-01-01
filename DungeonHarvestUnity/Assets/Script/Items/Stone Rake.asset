@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone Rake
   m_EditorClassIdentifier: 
   itemName: Stone Rake
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7f9263b7f6f7721469d94ede1364757b, type: 3}
   prefab: {fileID: 3238402203397681468, guid: fcdba49b19f191c419f3f0b4b3c67374, type: 3}
   type: 2
   actionType: 2

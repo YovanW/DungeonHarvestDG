@@ -82,6 +82,25 @@ public class ObjectDetector : MonoBehaviour
                 : "Press \"E\" to Open";
             return;
         }
+
+        // Farming Soil
+        if (lookingAt.TryGetComponent(out soilHitBox soil))
+        {
+            if (!soil.isRaked)
+            {
+                intractInfo.text = "Press Left Click to Rake Soil";
+            }
+            else if (soil.isRaked && soil.seedPrefab == null)
+            {
+                intractInfo.text = "Press \"E\" to Plant Seed";
+            }
+            else if (soil.readyToHarvest)
+            {
+                intractInfo.text = "Press \"E\" to Harvest Crop";
+            }
+           
+            return;
+        }
     }
 
 

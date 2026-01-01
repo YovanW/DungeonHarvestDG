@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Copper Rake
   m_EditorClassIdentifier: 
   itemName: Copper Rake
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8ceacaeea8f5d154b97b1479112ce8cc, type: 3}
   prefab: {fileID: 5329295999316876085, guid: 762c5cdbfa7961b4081745a185c6fa0a, type: 3}
   type: 2
   actionType: 2

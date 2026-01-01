@@ -40,7 +40,7 @@ public class playerFarming : MonoBehaviour
                 }
 
                 // buat testing
-                else { soil.isRaked = false; }
+                // else { soil.isRaked = false; }
             }
 
         }

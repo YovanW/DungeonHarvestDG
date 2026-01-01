@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Health Mash Seed
   m_EditorClassIdentifier: 
   itemName: Health Mash Seed
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9ceabf194f3cfa942b6a7f9804b26fca, type: 3}
   prefab: {fileID: 6959528322105333068, guid: 07a6d9b7829224e4db405cf71d93e43e, type: 3}
   type: 6
   actionType: 4

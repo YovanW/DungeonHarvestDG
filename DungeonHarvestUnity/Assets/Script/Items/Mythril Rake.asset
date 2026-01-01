@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mythril Rake
   m_EditorClassIdentifier: 
   itemName: Mythril Rake
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: eb0578fbd7255d645a023b1856c8422f, type: 3}
   prefab: {fileID: 7267022973219795608, guid: d881370ae7160df48b8b31023d483fe4, type: 3}
   type: 2
   actionType: 2

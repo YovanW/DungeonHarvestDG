@@ -60,6 +60,11 @@ public class soilHitBox : MonoBehaviour
 
     }
 
+    public bool getStatusHarvest()
+    {
+        return readyToHarvest;
+    }
+
     public void ResetSoil()
     {
         isRaked = false;
