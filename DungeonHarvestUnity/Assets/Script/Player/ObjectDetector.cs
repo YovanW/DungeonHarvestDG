@@ -6,6 +6,7 @@ public class ObjectDetector : MonoBehaviour
 {
     public GameObject lookingAt;
     private GameObject lastLookingAt;
+    public ItemInHand itemInHand;
 
     public Vector3 collision = Vector3.zero;
     public float maxInteractRange = 2.5f;
@@ -81,21 +82,23 @@ public class ObjectDetector : MonoBehaviour
             return;
         }
 
-        // Farming Soil
+        // Farming Soil FIXME: delay update
         if (lookingAt.TryGetComponent(out soilHitBox soil))
         {
-            if (!soil.isRaked)
+            
+            if (!soil.isRaked && itemInHand.getSelectedSO() != null && itemInHand.getSelectedSO().actionType == ItemSO.ActionType.Rake)
             {
                 intractInfo.text = "Press Left Click to Rake Soil";
             }
-            else if (soil.isRaked && soil.seedPrefab == null)
+            if (soil.isRaked && soil.seedPrefab == null && itemInHand.getSelectedSO() != null && itemInHand.getSelectedSO().type == ItemSO.ItemType.Seed)
             {
                 intractInfo.text = "Press \"E\" to Plant Seed";
             }
-            else if (soil.readyToHarvest)
+            if (soil.readyToHarvest)
             {
                 intractInfo.text = "Press \"E\" to Harvest Crop";
             }
+
 
             return;
         }
