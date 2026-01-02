@@ -16,7 +16,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 702ad724ea93d4a4ebb4a402da08b448, type: 3}
   prefab: {fileID: 8905817652918022056, guid: 7b9b987d2357ff64291f543acaa7406b, type: 3}
   type: 5
-  actionType: 3
+  actionType: 5
   stackable: 1
   miningPower: 0
+  extraInfo: 0
   itemOffsetInHand: {x: -0.015, y: 0.318, z: 0}

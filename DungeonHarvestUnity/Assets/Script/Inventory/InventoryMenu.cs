@@ -64,6 +64,8 @@ public class InventoryMenu : MonoBehaviour
         deleteSlot.SetActive(false);
         playerStats.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+
+        ItemTooltip.Instance.Hide();
     }
 
     public void openInventory()

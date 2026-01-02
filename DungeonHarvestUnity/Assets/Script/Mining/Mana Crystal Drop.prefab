@@ -118,6 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6663237355912961013}
+  - component: {fileID: 4471101024662121319}
   m_Layer: 0
   m_Name: Mana Crystal Drop
   m_TagString: Untagged
@@ -141,6 +142,21 @@ Transform:
   - {fileID: 8299599095652563415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4471101024662121319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969400456941378272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f81f470f1fec146b666ece7cef3b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.06, y: 0.166, z: 0.024}
+  rotation: {x: 0, y: -90, z: 0}
+  scale: {x: 0.3879034, y: 0.3879034, z: 0.3879034}
 --- !u!1 &8675562131320890221
 GameObject:
   m_ObjectHideFlags: 0

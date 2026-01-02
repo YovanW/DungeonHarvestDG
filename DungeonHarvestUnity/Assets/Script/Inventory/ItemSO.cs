@@ -37,6 +37,7 @@ public class ItemSO : ScriptableObject
         Chop,
         Rake,
         Attack,
+        Ferilizer,
         None
     }
 

@@ -22,7 +22,7 @@ public class playerFarming : MonoBehaviour
     void Update()
     {
         var selectedSO = itemHand.getSelectedSO();      // get the item in hand
-        if (ray.lookingAt == null) return;              // get the object player is looking at
+        if (ray.lookingAt == null || Time.deltaTime == 0) return;
 
         // Rake soil
         if (selectedSO != null && selectedSO.actionType == ItemSO.ActionType.Rake)
@@ -56,6 +56,8 @@ public class playerFarming : MonoBehaviour
             {
                 if (soil.isRaked && soil.seedPrefab == null)
                 {
+                    if (soil.getStatusHarvest()) return;
+
                     Debug.Log("Trying to plant seed...");
 
                     // reduce seed count in inventory
@@ -65,8 +67,30 @@ public class playerFarming : MonoBehaviour
                     TryPlant(soil, seed);
                 }
             }
+        }
 
+        // Fertilize soil
+        if (selectedSO != null && selectedSO.actionType == ItemSO.ActionType.Ferilizer)
+        {
+            selectedSO = itemHand.getSelectedSO();          // get the item in hand
+            soilHitBox soil = ray.lookingAt.GetComponent<soilHitBox>();
+            if (soil == null || selectedSO == null) return;
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (soil.isRaked)
+                {
+                    if (soil.getStatusHarvest()) return;
+
+                    Debug.Log("Trying to fertilize soil...");
+
+                    // reduce fertilizer count in inventory
+                    int slotIndex = inventoryManager.GetComponent<HotbarManager>().selectedIndex;
+                    inventoryManager.RemoveItem(selectedSO, slotIndex);
+
+                    TryFertilize(soil, selectedSO);
+                }
+            }
         }
 
         // Harvest crop 
@@ -86,8 +110,6 @@ public class playerFarming : MonoBehaviour
 
     void TryHarvest(soilHitBox soil)
     {
-        float dist = Vector3.Distance(transform.position, soil.transform.position);
-        if (dist > maxRakeDistance) return;
 
         // add harvested crops to inventory
         ItemSO cropPrefab = soil.seedPrefab.GetComponent<harvestPrefab>().harvestItem;
@@ -128,6 +150,15 @@ public class playerFarming : MonoBehaviour
         soil.PlantSeed(seed);
     }
 
+    void TryFertilize(soilHitBox soil, ItemSO fertilizer)
+    {
+        float dist = Vector3.Distance(transform.position, soil.transform.position);
+        if (dist > maxRakeDistance) return;
+
+        // fertilize the soil
+        soil.soilQuality += fertilizer.extraInfo;
+        soil.FertilizeSoil(fertilizer.prefab);
+    }
 
     IEnumerator SwingAnimation(Transform hitpos)
     {

@@ -7,6 +7,7 @@ public class ObjectDetector : MonoBehaviour
     public GameObject lookingAt;
     private GameObject lastLookingAt;
     public ItemInHand itemInHand;
+    public InventoryMenu inventoryMenu;
 
     public Vector3 collision = Vector3.zero;
     public float maxInteractRange = 2.5f;
@@ -19,7 +20,7 @@ public class ObjectDetector : MonoBehaviour
 
     void Start()
     {
-
+        inventoryMenu = GameObject.FindGameObjectWithTag("CanvasController").GetComponent<InventoryMenu>();
     }
 
     void Update()
@@ -51,20 +52,17 @@ public class ObjectDetector : MonoBehaviour
         }
 
         // Hide intractInfo when inventory is open
-        if (GameObject.FindGameObjectWithTag("CanvasController").GetComponent<InventoryMenu>().isOpen) { intractInfo.gameObject.SetActive(false); }
-        else { intractInfo.gameObject.SetActive(true); }
+        intractInfo.gameObject.SetActive(!inventoryMenu.isOpen);
 
         UpdateIntractInfo();
+
     }
 
     void UpdateIntractInfo()
     {
         // Default Empty
-        if (lookingAt == null)
-        {
-            intractInfo.text = "";
-            return;
-        }
+        intractInfo.text = "";
+        if (lookingAt == null) { return; }
 
         // Chest
         if (lookingAt.TryGetComponent(out chestOpen chest))
@@ -82,19 +80,22 @@ public class ObjectDetector : MonoBehaviour
             return;
         }
 
-        // Farming Soil FIXME: delay update
+        // Farming Soil 
         if (lookingAt.TryGetComponent(out soilHitBox soil))
         {
-            
-            if (!soil.isRaked && itemInHand.getSelectedSO() != null && itemInHand.getSelectedSO().actionType == ItemSO.ActionType.Rake)
-            {
-                intractInfo.text = "Press Left Click to Rake Soil";
-            }
-            if (soil.isRaked && soil.seedPrefab == null && itemInHand.getSelectedSO() != null && itemInHand.getSelectedSO().type == ItemSO.ItemType.Seed)
+
+            ItemSO selected = itemInHand.getSelectedSO();
+
+            // if (!soil.isRaked && selected != null && selected.actionType == ItemSO.ActionType.Rake)
+            // {
+            //     intractInfo.text = "Press Left Click to Rake Soil";
+            // }
+
+            if (soil.isRaked && soil.seedPrefab == null && selected != null && selected.type == ItemSO.ItemType.Seed)
             {
                 intractInfo.text = "Press \"E\" to Plant Seed";
             }
-            if (soil.readyToHarvest)
+            else if (soil.readyToHarvest)
             {
                 intractInfo.text = "Press \"E\" to Harvest Crop";
             }
