@@ -44,7 +44,7 @@ public class Ore : MonoBehaviour
 
     public void Mine(int miningPower)
     {
-        Debug.Log("Power : " + miningPower);
+        // Debug.Log("Power : " + miningPower);
 
 
         // cek apakah pickaxe cukup kuat

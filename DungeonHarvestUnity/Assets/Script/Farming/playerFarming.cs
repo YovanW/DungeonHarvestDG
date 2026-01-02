@@ -80,7 +80,7 @@ public class playerFarming : MonoBehaviour
             {
                 if (soil.isRaked)
                 {
-                    Debug.Log("Soil fertilizer slots: " + soil.getFertilizerSlots());
+                    // Debug.Log("Soil fertilizer slots: " + soil.getFertilizerSlots());
                     if (soil.getStatusHarvest() || soil.getFertilizerSlots() <= 0) return;
 
                     Debug.Log("Trying to fertilize soil...");
@@ -162,14 +162,56 @@ public class playerFarming : MonoBehaviour
 
     IEnumerator SwingAnimation(Transform hitpos)
     {
-        // stop spam action
         if (isSwinging) yield break;
         isSwinging = true;
 
-        // TODO: rake swing animation
-        // yield return new WaitForSeconds(1f);
+        Transform rake = itemHand.transform;
+
+        Vector3 startPos = rake.localPosition;
+        Quaternion startRot = rake.localRotation;
+
+        Quaternion soilRot = Quaternion.Euler(65f, 0f, 12f);
+        Vector3 prepPos = startPos + new Vector3(0f, 0.78f, 0.05f);
+
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * 6f;
+            rake.localRotation = Quaternion.Slerp(startRot, soilRot, t);
+            rake.localPosition = Vector3.Lerp(startPos, prepPos, t);
+
+            yield return null;
+        }
+
+        // pull dirt toward feet 
+        Vector3 pullToFeetPos = startPos + new Vector3(0f, -0.08f, -0.35f);
+        Quaternion scrapeRot = soilRot * Quaternion.Euler(0f, 0f, 8f);
+
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * 8f;
+            rake.localPosition = Vector3.Lerp(prepPos, pullToFeetPos, t);
+            rake.localRotation = Quaternion.Slerp(soilRot, scrapeRot, t);
+            yield return null;
+        }
+
+        // lift rake off ground
+        Vector3 liftPos = startPos + new Vector3(0f, 0.12f, -0.1f);
+
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * 6f;
+            rake.localPosition = Vector3.Lerp(pullToFeetPos, liftPos, t);
+            rake.localRotation = Quaternion.Slerp(scrapeRot, startRot, t);
+            yield return null;
+        }
+
+        rake.localPosition = startPos;
+        rake.localRotation = startRot;
 
         isSwinging = false;
-        yield return null;
     }
+
 }
