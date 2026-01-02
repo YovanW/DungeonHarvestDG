@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron Rake
   m_EditorClassIdentifier: 
   itemName: Iron Rake
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fbd09ad74a1f156479b3c04d93f32bc4, type: 3}
   prefab: {fileID: 5965308706481879671, guid: 33e88488a538d5d4cb14308765b3c1bf, type: 3}
   type: 2
   actionType: 2

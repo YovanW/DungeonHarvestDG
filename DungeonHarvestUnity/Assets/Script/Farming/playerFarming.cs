@@ -80,7 +80,8 @@ public class playerFarming : MonoBehaviour
             {
                 if (soil.isRaked)
                 {
-                    if (soil.getStatusHarvest()) return;
+                    Debug.Log("Soil fertilizer slots: " + soil.getFertilizerSlots());
+                    if (soil.getStatusHarvest() || soil.getFertilizerSlots() <= 0) return;
 
                     Debug.Log("Trying to fertilize soil...");
 
@@ -152,8 +153,7 @@ public class playerFarming : MonoBehaviour
 
     void TryFertilize(soilHitBox soil, ItemSO fertilizer)
     {
-        float dist = Vector3.Distance(transform.position, soil.transform.position);
-        if (dist > maxRakeDistance) return;
+        if (soil.getFertilizerSlots() <= 0) return;
 
         // fertilize the soil
         soil.soilQuality += fertilizer.extraInfo;

@@ -72,9 +72,9 @@ public class soilHitBox : MonoBehaviour
         return readyToHarvest;
     }
 
-    public bool getFertilizerSlots()
+    public int getFertilizerSlots()
     {
-        return fertilizerSlots > 0;
+        return fertilizerSlots;
     }
 
     public void ResetSoil()
