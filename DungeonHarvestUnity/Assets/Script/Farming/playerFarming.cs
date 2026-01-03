@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class playerFarming : MonoBehaviour
 {
-    public InventoryManager inventoryManager;
+    private InventoryManager inventoryManager;
     public ObjectDetector ray;
     public ItemInHand itemHand;
     bool isSwinging = false;
-    private float maxRakeDistance = 2.5f;
+    private float maxRakeDistance = 3f;
 
     void Start()
     {

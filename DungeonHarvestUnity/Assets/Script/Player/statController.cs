@@ -8,13 +8,21 @@ public class statController : MonoBehaviour
     public TextMeshProUGUI damageText;
     public TextMeshProUGUI defenseText;
 
+    public int maxHealthBuff = 5;
+    public int maxDamageBuff = 5;
+    public int maxDefenseBuff = 5;
+
+    bool initialized = false;
+
     void Start()
     {
+        if (initialized) return;
+
         setHealth(100);
         setStamina(100);
-
         setDamage(10);
         setDefense(5);
+        initialized = true;
     }
 
     public void setHealth(int health)
