@@ -7,6 +7,7 @@ public class ItemInHand : MonoBehaviour
     private GameObject selectedItem;
     private GameObject previousItem;
     private HotbarManager hotbar;
+    private ItemSO selectedSO;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class ItemInHand : MonoBehaviour
 
     void Update()
     {
-        ItemSO selectedSO = hotbar.getSelectedItem();
+        selectedSO = hotbar.getSelectedItem();
 
         if (selectedSO == null)
         {
@@ -29,13 +30,7 @@ public class ItemInHand : MonoBehaviour
         // only update when selected item changes
         if (selectedItem != previousItem)
         {
-            ClearHand();
-
-            if (selectedItem != null)
-            {
-                GameObject itemInHand = Instantiate(selectedItem, itemPosition.transform);
-                itemInHand.transform.localPosition = selectedSO.itemOffsetInHand;
-            }
+            RefreshHand();
 
             previousItem = selectedItem;
         }
@@ -51,4 +46,19 @@ public class ItemInHand : MonoBehaviour
         foreach (Transform child in itemPosition.transform)
             Destroy(child.gameObject);
     }
+
+    public void RefreshHand()
+    {
+        ClearHand();
+
+        selectedItem = hotbar.getSelectedItem()?.prefab;
+        selectedSO = hotbar.getSelectedItem();
+
+        if (selectedItem != null)
+        {
+            GameObject itemInHand = Instantiate(selectedItem, itemPosition.transform);
+            itemInHand.transform.localPosition = selectedSO.itemOffsetInHand;
+        }
+    }
+
 }
