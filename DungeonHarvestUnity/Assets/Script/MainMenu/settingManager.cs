@@ -121,29 +121,43 @@ public class settingManager : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-        // audioMixer.SetFloat("MasterVol", Mathf.Lerp(-80, 0, value));
-        masterValueText.text = Mathf.RoundToInt(value).ToString();
+        float normalized = value / 100f;
+        float db;
+        if (normalized <= 0f) db = -80f;
+        else db = Mathf.Log10(normalized) * 20f;
+        audioMixer.SetFloat("MasterVol", db);
 
+        masterValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("MasterVolume", value);
-        PlayerPrefs.Save();
     }
+
+
 
     public void SetMusicVolume(float value)
     {
-        // audioMixer.SetFloat("MusicVol", Mathf.Lerp(-80, 0, value));
-        musicValueText.text = Mathf.RoundToInt(value).ToString();
+        float normalized = value / 100f;
+        float db;
+        if (normalized <= 0f) db = -80f;
+        else db = Mathf.Log10(normalized) * 20f;
+        audioMixer.SetFloat("MusicVol", db);
 
+        musicValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("MusicVolume", value);
-        PlayerPrefs.Save();
     }
+
 
     public void SetVFXVolume(float value)
     {
-        // audioMixer.SetFloat("VFXVol", Mathf.Lerp(-80, 0, value));
-        vfxValueText.text = Mathf.RoundToInt(value).ToString();
+        float normalized = value / 100f;
+        float db;
+        if (normalized <= 0f) db = -80f;
+        else db = Mathf.Log10(normalized) * 20f;
+        audioMixer.SetFloat("VFXVol", db);
 
+        vfxValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("VFXVolume", value);
-        PlayerPrefs.Save();
     }
+
+
 
 }
