@@ -6,158 +6,116 @@ using UnityEngine.UI;
 
 public class settingManager : MonoBehaviour
 {
-    public GameObject player = null;
+    public GameObject player;
 
-    // Display Mode Buttons
+    [Header("Display Mode")]
     public Button fullscreenBtn;
     public Button windowedBtn;
     public Button borderlessBtn;
     private List<Button> displayButtons;
 
-    // Gameplay settings
+    [Header("Mouse")]
     [SerializeField] private TextMeshProUGUI mouseValueText;
     [SerializeField] private Slider mouseSlider;
 
-    // Audio settings
-    /*  AUDIO MIXER SETUP
-
-        1. Buat Audio Mixer
-           - Project → Create → Audio → Audio Mixer
-           - Contoh nama: GameAudio
-
-        2. Buat Mixer Group
-           Di dalam mixer, buat tiga group:
-             • Master
-             • Music
-             • VFX
-
-           Struktur akhirnya:
-             Master
-             ├── Music
-             └── VFX
-
-        3. Pasang Mixer Group ke AudioSource
-           - Pilih GameObject yang punya AudioSource
-           - Pada AudioSource → Output pilih:
-               • BGM / lagu          → Music
-               • Semua sound effect  → VFX
-                 (footstep, UI click, hit, explosion, magic, wind, dll)
-
-           Catatan:
-           - Semua SFX masuk ke VFX biar gampang dikontrol satu slider.
-
-        4. Expose Volume Parameters
-           - Di Audio Mixer, klik tombol knob Volume pada tiap group
-           - Klik kanan → Expose Volume
-           - Ganti nama parameter jadi:
-               • MasterVol
-               • MusicVol
-               • VFXVol
-
-        5. Hubungkan Slider ke Audio Mixer (di script)
-           - Gunakan mixer.SetFloat("MusicVol", valueDalamDb);
-           - Konversi slider (0–1) ke dB memakai:
-               Mathf.Log10(sliderValue) * 20
-
-        6. Nilai umum:
-           - Volume normal = 0 dB
-           - Mute          = -80 dB
-    */
-    public AudioMixer audioMixer = null; // belum dibuat
+    [Header("Audio")]
+    public AudioMixer audioMixer;
 
     [SerializeField] private TextMeshProUGUI masterValueText;
     [SerializeField] private Slider masterSlider;
+
     [SerializeField] private TextMeshProUGUI musicValueText;
     [SerializeField] private Slider musicSlider;
+
     [SerializeField] private TextMeshProUGUI vfxValueText;
     [SerializeField] private Slider vfxSlider;
 
+    void Awake()
+    {
+        displayButtons = new List<Button>
+        {
+            fullscreenBtn,
+            windowedBtn,
+            borderlessBtn
+        };
+    }
+
     void Start()
     {
-        displayButtons = new List<Button> { fullscreenBtn, windowedBtn, borderlessBtn };
         fullscreenBtn.onClick.AddListener(() => SelectDisplayMode(fullscreenBtn));
         windowedBtn.onClick.AddListener(() => SelectDisplayMode(windowedBtn));
         borderlessBtn.onClick.AddListener(() => SelectDisplayMode(borderlessBtn));
 
         mouseSlider.onValueChanged.AddListener(SetMouseSensitivity);
-
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         vfxSlider.onValueChanged.AddListener(SetVFXVolume);
     }
 
+    // ================= DISPLAY MODE =================
     public void SelectDisplayMode(Button selected)
     {
-        displayButtons = new List<Button> { fullscreenBtn, windowedBtn, borderlessBtn };
-
         foreach (var btn in displayButtons)
             btn.interactable = true;
 
         selected.interactable = false;
-        Debug.Log("Selected Display Mode: " + selected.name);
 
-        // Apply display mode setting to the game window
         if (selected == fullscreenBtn)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             PlayerPrefs.SetString("DisplayMode", "Fullscreen");
+        }
         else if (selected == windowedBtn)
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
             PlayerPrefs.SetString("DisplayMode", "Windowed");
+        }
         else if (selected == borderlessBtn)
+        {
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
             PlayerPrefs.SetString("DisplayMode", "Borderless");
+        }
+
         PlayerPrefs.Save();
     }
 
+    // ================= MOUSE =================
     public void SetMouseSensitivity(float value)
     {
         mouseValueText.text = value.ToString("F2");
 
-        PlayerPrefs.SetFloat("MouseSensitivity", value);
-        PlayerPrefs.Save();
-
         if (player != null)
-            // Apply mouse sensitivity setting to the game
-            player.GetComponent<FirstPersonController>().mouseSensitivity = value * 300;
+            player.GetComponent<FirstPersonController>().mouseSensitivity = value * 300f;
+
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
     }
 
-
+    // ================= AUDIO =================
     public void SetMasterVolume(float value)
     {
-        float normalized = value / 100f;
-        float db;
-        if (normalized <= 0f) db = -80f;
-        else db = Mathf.Log10(normalized) * 20f;
-        audioMixer.SetFloat("MasterVol", db);
-
+        SetVolume("MasterVol", value);
         masterValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("MasterVolume", value);
     }
 
-
-
     public void SetMusicVolume(float value)
     {
-        float normalized = value / 100f;
-        float db;
-        if (normalized <= 0f) db = -80f;
-        else db = Mathf.Log10(normalized) * 20f;
-        audioMixer.SetFloat("MusicVol", db);
-
+        SetVolume("MusicVol", value);
         musicValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
-
     public void SetVFXVolume(float value)
     {
-        float normalized = value / 100f;
-        float db;
-        if (normalized <= 0f) db = -80f;
-        else db = Mathf.Log10(normalized) * 20f;
-        audioMixer.SetFloat("VFXVol", db);
-
+        SetVolume("VFXVol", value);
         vfxValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("VFXVolume", value);
     }
 
-
-
+    private void SetVolume(string param, float sliderValue)
+    {
+        float normalized = sliderValue / 100f;
+        float db = normalized <= 0f ? -80f : Mathf.Log10(normalized) * 20f;
+        audioMixer.SetFloat(param, db);
+    }
 }

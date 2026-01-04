@@ -106,8 +106,8 @@ public class MenuBtn : MonoBehaviour
         }
 
         // FIXME: test scene load
-        // SceneManager.LoadScene("nathanTest");
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("nathanTest");
+        // SceneManager.LoadScene("Demo");
     }
 
     public void newGame()

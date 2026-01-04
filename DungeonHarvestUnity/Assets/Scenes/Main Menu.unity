@@ -272,7 +272,7 @@ MonoBehaviour:
   borderlessBtn: {fileID: 5253866220756747101}
   mouseValueText: {fileID: 7484895569085384025}
   mouseSlider: {fileID: 9034002946041444019}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 0b31beeaab401ab42a6348217735a7f3, type: 2}
   masterValueText: {fileID: 8170304412318151018}
   masterSlider: {fileID: 7773856852191511168}
   musicValueText: {fileID: 3709292608729549153}
@@ -637,24 +637,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7cbb560561d1c4c902fb0af634141e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUse: 1
   defaultAll: 0
   settingsManager: {fileID: 312307815}
   fullscreenBtn: {fileID: 9215475990249465046}
   windowedBtn: {fileID: 3707532706965108804}
   borderlessBtn: {fileID: 5253866220756747101}
-  screenMode: Fullscreen
   defaultScreenMode: Fullscreen
-  mouseValueText: {fileID: 7484895569085384025}
   mouseSlider: {fileID: 9034002946041444019}
   defaultMouseSensitivity: 1
-  masterValueText: {fileID: 8170304412318151018}
   masterSlider: {fileID: 7773856852191511168}
   defaultMasterVolume: 100
-  musicValueText: {fileID: 3709292608729549153}
   musicSlider: {fileID: 3024876284008577675}
   defaultMusicVolume: 100
-  vfxValueText: {fileID: 8282433303694401859}
   vfxSlider: {fileID: 7525959423304061609}
   defaultVFXVolume: 100
 --- !u!4 &1228409713
