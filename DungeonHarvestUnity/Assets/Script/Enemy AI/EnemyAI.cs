@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     private bool isAttacking = false;
 
     public GameObject attackHitbox;
+    private bool isDead = false;
+
 
     public void EnableHitbox()
     {
@@ -43,16 +45,24 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        isDead = true;
+
+        if (agent != null && agent.isOnNavMesh)
+            agent.ResetPath();
+
+        if (agent != null)
+            agent.enabled = false;
+
+        anim.SetBool("Walk", false);
+        anim.SetBool("InRange", false);
+    }
+
+
     void Update()
     {
         float dist = Vector3.Distance(transform.position, player.position);
-
-        // Already dead
-        if (anim.GetInteger("Health") <= 0)
-        {
-            agent.ResetPath();
-            return;
-        }
 
         // Attack range
         if (dist <= attackRange)
@@ -111,16 +121,4 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("InRange", false);
     }
 
-    public void TakeDamage(int dmg)
-    {
-        int h = anim.GetInteger("Health");
-        anim.SetInteger("Health", h - dmg);
-
-        if (anim.GetInteger("Health") <= 0)
-        {
-            agent.ResetPath();
-            anim.SetBool("Walk", false);
-            anim.SetBool("InRange", false);
-        }
-    }
 }

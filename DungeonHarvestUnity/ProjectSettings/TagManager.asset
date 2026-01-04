@@ -8,6 +8,7 @@ TagManager:
   - DeleteSlot
   - InventoryManager
   - CanvasController
+  - Enemy
   layers:
   - Default
   - TransparentFX
