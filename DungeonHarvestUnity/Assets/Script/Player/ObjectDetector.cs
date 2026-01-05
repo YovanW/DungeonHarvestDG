@@ -113,7 +113,7 @@ public class ObjectDetector : MonoBehaviour
             }
             else if (craftMenu.stationType == CraftingType.Craft)
             {
-                intractInfo.text = "Press \"E\" to Use Crafting Bench";
+                intractInfo.text = "Press \"E\" to Craft";
             }
 
             return;
