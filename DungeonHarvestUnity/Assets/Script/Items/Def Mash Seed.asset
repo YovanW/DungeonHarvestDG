@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b45b5d2d9820c642a431c6e229e06c6, type: 3}
+  m_Name: Def Mash Seed
+  m_EditorClassIdentifier: 
+  itemName: Def Mash Seed
+  icon: {fileID: 21300000, guid: 9a31a31e16c58cd4e8283c9f4bd5aa78, type: 3}
+  prefab: {fileID: 317907342021811887, guid: f8f485ffb1db88d4aadc881f0c210564, type: 3}
+  type: 6
+  actionType: 5
+  stackable: 1
+  miningPower: 0
+  extraInfo: 0
+  itemOffsetInHand: {x: 0, y: 0.371, z: 0}

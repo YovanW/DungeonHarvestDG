@@ -19,7 +19,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Stamina Settings")]
     public float jumpStaminaCost = 15f;
-    public float dashStaminaCost = 30f;
+    public float dashStaminaCost = 1f;
     public float minStaminaToSprint = 10f;
 
     private CharacterController controller;
@@ -84,9 +84,23 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(move * currentSpeed * Time.deltaTime);
     }
 
+    private float lastJumpTime;
+    public float jumpCooldown = 0.2f;
+
+    private int jumpCount = 0;
+    private int maxJumps = 1; // For double jump
+
     void HandleJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // Reset jump count when grounded
+        if (controller.isGrounded)
+        {
+            jumpCount = 0;
+        }
+
+        if (Time.time < lastJumpTime + jumpCooldown) return;
+
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
         {
             if (healthStaminaManager != null)
             {
@@ -94,7 +108,13 @@ public class FirstPersonController : MonoBehaviour
                     return;
             }
 
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            Debug.Log("JUMP " + (jumpCount + 1));
+
+            velocity.y = 0;
+            velocity.y = Mathf.Sqrt(jumpForce * -1f * gravity);
+
+            lastJumpTime = Time.time;
+            jumpCount++;
         }
     }
 
@@ -105,7 +125,7 @@ public class FirstPersonController : MonoBehaviour
             dashCooldownTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.C) && dashCooldownTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.C) && dashCooldownTimer <= 0)
         {
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");

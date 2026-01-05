@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b45b5d2d9820c642a431c6e229e06c6, type: 3}
+  m_Name: Attack Mash Seed
+  m_EditorClassIdentifier: 
+  itemName: Attack Mash Seed
+  icon: {fileID: 21300000, guid: a234e9e462d05d74aba246ef77eeac28, type: 3}
+  prefab: {fileID: 1160063300117948525, guid: bab01f8e0caf26d4b972a68f6d2f3a84, type: 3}
+  type: 6
+  actionType: 5
+  stackable: 1
+  miningPower: 0
+  extraInfo: 0
+  itemOffsetInHand: {x: 0, y: 0.364, z: 0}

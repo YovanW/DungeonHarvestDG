@@ -6,9 +6,8 @@ public class Crosshair : MonoBehaviour
     public Texture2D crosshairTexture;
     public Vector2 crosshairSize = new Vector2(20, 20);
     public Color crosshairColor = Color.white;
-    
     private Vector2 screenCenter;
-    
+
     void Start()
     {
         // Calculate screen center once
