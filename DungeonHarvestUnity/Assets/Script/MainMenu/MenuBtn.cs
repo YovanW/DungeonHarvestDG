@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.IO;
 
 
 public class MenuBtn : MonoBehaviour
@@ -20,8 +21,6 @@ public class MenuBtn : MonoBehaviour
     public Button hardModeBtn;
     public Button backBtn;
     public Button settingBackBtn;
-
-    private string dataToLoad;
 
     void Start()
     {
@@ -96,15 +95,6 @@ public class MenuBtn : MonoBehaviour
     {
         Debug.Log("Continue Game");
 
-        //TODO: Load saved game data
-        if (PlayerPrefs.HasKey("SavedGame"))
-        {
-            // dataToLoad = PlayerPrefs.GetString("SavedGame");
-
-            // // Load the saved game scene
-            // SceneManager.LoadScene("Game");
-        }
-
         // FIXME: test scene load
         SceneManager.LoadScene("nathanTest");
         // SceneManager.LoadScene("Demo");
@@ -112,28 +102,17 @@ public class MenuBtn : MonoBehaviour
 
     public void newGame()
     {
-        bool isActive = normalModeBtn.gameObject.activeSelf;
+        PlayerPrefs.DeleteKey("SavedGame");
+        PlayerPrefs.DeleteKey("InventoryData");
+        PlayerPrefs.Save();
 
-        // toggle both buttons
-        normalModeBtn.gameObject.SetActive(!isActive);
-        hardModeBtn.gameObject.SetActive(!isActive);
+        // FIXME: test scene load
+        SceneManager.LoadScene("nathanTest");
+        // SceneManager.LoadScene("Demo");
 
         // force the button to return to normal state
         EventSystem.current.SetSelectedGameObject(null);
     }
 
-    public void normalMode()
-    {
-        Debug.Log("Normal Mode Selected");
-        //TODO: create new game in normal mode
-
-    }
-
-    public void hardMode()
-    {
-        Debug.Log("Hard Mode Selected");
-        //TODO: create new game in hard mode
-
-    }
 
 }

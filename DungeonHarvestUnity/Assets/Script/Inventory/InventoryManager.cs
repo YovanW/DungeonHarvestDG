@@ -5,11 +5,27 @@ using System;
 
 public class InventoryManager : MonoBehaviour
 {
+    public ItemSO[] allItems;
+
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public int maxStackSize = 20;
     public static event Action OnInventoryChanged;
 
+    void OnEnable()
+    {
+        OnInventoryChanged += SaveInventory;
+    }
+
+    void OnDisable()
+    {
+        OnInventoryChanged -= SaveInventory;
+    }
+
+    void Awake()
+    {
+        LoadInventory();
+    }
 
     public void AddItem(ItemSO item)
     {
@@ -136,4 +152,70 @@ public class InventoryManager : MonoBehaviour
     {
         OnInventoryChanged?.Invoke();
     }
+
+    public void SaveInventory()
+    {
+        InventorySlotSave[] slots = new InventorySlotSave[inventorySlots.Length];
+
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventoryItem item = inventorySlots[i].GetComponentInChildren<InventoryItem>();
+
+            if (item != null)
+            {
+                slots[i] = new InventorySlotSave
+                {
+                    itemName = item.item.itemName,
+                    count = item.count
+                };
+            }
+        }
+
+        string json = JsonUtility.ToJson(
+            new InventoryWrapper { slots = slots }
+        );
+
+        PlayerPrefs.SetString("InventoryData", json);
+        PlayerPrefs.SetInt("SavedGame", 1);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadInventory()
+    {
+        foreach (var slot in inventorySlots)
+        {
+            InventoryItem oldItem = slot.GetComponentInChildren<InventoryItem>();
+            if (oldItem != null)
+                Destroy(oldItem.gameObject);
+        }
+
+        if (!PlayerPrefs.HasKey("InventoryData"))
+            return;
+
+
+        if (!PlayerPrefs.HasKey("InventoryData"))
+            return;
+
+        string json = PlayerPrefs.GetString("InventoryData");
+        InventoryWrapper wrapper = JsonUtility.FromJson<InventoryWrapper>(json);
+
+        for (int i = 0; i < wrapper.slots.Length; i++)
+        {
+            var data = wrapper.slots[i];
+            if (data == null) continue;
+
+            ItemSO item = System.Array.Find(allItems, x => x.itemName == data.itemName);
+
+            if (item == null) continue;
+
+            InventorySlot slot = inventorySlots[i];
+            GameObject go = Instantiate(inventoryItemPrefab, slot.transform);
+            InventoryItem invItem = go.GetComponent<InventoryItem>();
+            invItem.InitialiseItem(item);
+            invItem.count = data.count;
+            invItem.refreshCount();
+        }
+    }
+
+
 }

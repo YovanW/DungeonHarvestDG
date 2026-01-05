@@ -1,8 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ChestMode { Random, Fixed }
+
+
 public class chestOpen : MonoBehaviour
 {
+    public ChestMode chestMode = ChestMode.Random;
+    [Header("Fixed Chest Items")]
+    public List<FixedChestItem> fixedItems;
+
+    [Header("Random Chest Items")]
     public List<InventorySlot> chestInventory;
     public List<ItemSO> lootTable;
     public int maxItems = 5;
@@ -30,12 +38,34 @@ public class chestOpen : MonoBehaviour
     {
         chestUIManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<ChestUIManager>();
 
-        if (!generatedOnce)
+        if (generatedOnce) return;
+        currentItems = new List<InventoryItem>();
+        if (chestMode == ChestMode.Random)
         {
             GenerateChestItems();
-            generatedOnce = true;
+        }
+        else
+        {
+            GenerateFixedItems();
+        }
+
+        generatedOnce = true;
+    }
+
+    void GenerateFixedItems()
+    {
+        foreach (var data in fixedItems)
+        {
+            if (data.item == null) continue;
+
+            InventoryItem item = new InventoryItem();
+            item.item = data.item;
+            item.count = Mathf.Max(1, data.count);
+
+            currentItems.Add(item);
         }
     }
+
 
     public void printChestItems()
     {

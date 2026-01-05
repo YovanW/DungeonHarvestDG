@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingCanvas;
     private bool isOpen = false;
+    public InventoryManager inventoryManager;
 
 
     public Button continueBtn;
@@ -17,6 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
+
         pauseMenu.SetActive(false);
         settingCanvas.SetActive(false);
 
@@ -50,7 +53,9 @@ public class PauseMenu : MonoBehaviour
     public void saveAndExit()
     {
         // TODO: implement save functionality
-
+        inventoryManager.SaveInventory();
+        PlayerPrefs.SetInt("SavedGame", 1);
+        PlayerPrefs.Save();
 
         SceneManager.LoadScene("Main Menu");
     }
@@ -79,5 +84,5 @@ public class PauseMenu : MonoBehaviour
             else { pause(); }
         }
     }
-    
+
 }
