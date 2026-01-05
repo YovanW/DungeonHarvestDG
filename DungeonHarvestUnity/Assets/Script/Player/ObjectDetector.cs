@@ -103,6 +103,22 @@ public class ObjectDetector : MonoBehaviour
 
             return;
         }
+
+        // Crafting Table + Furnace
+        if (lookingAt.TryGetComponent(out openCraftMenu craftMenu))
+        {
+            if (craftMenu.stationType == CraftingType.Forge)
+            {
+                intractInfo.text = "Press \"E\" to Use Furnace";
+            }
+            else if (craftMenu.stationType == CraftingType.Craft)
+            {
+                intractInfo.text = "Press \"E\" to Use Crafting Bench";
+            }
+
+            return;
+        }
+
     }
 
 
