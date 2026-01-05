@@ -12,13 +12,14 @@ public class GameAudio : MonoBehaviour
     public AudioClip death;
     public AudioClip takeDamage;
     public AudioClip chop;
-    public AudioClip treeFall;
     public AudioClip mine;
     public AudioClip rockBreak;
     public AudioClip eat;
 
     void Start()
     {
+        if (music == null) return;
+
         musicSource.clip = music;
         musicSource.Play();
     }

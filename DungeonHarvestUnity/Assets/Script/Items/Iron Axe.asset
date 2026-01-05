@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron Axe
   m_EditorClassIdentifier: 
   itemName: Iron Axe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cd111c5744f9dcd4b8f75ad3b6171f88, type: 3}
   prefab: {fileID: 4557253872213918356, guid: 7d6a03e7dd8727940a916ea3dce93e9f, type: 3}
   type: 2
   actionType: 1

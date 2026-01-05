@@ -21,7 +21,7 @@ public class SwordAttack : MonoBehaviour
 
     void TryAttack()
     {
-        Debug.Log("TryAttack");
+        // Debug.Log("TryAttack");
         if (isSwinging) return;
         if (currentItem == null) return;
         if (currentItem.actionType != ItemSO.ActionType.Attack) return;

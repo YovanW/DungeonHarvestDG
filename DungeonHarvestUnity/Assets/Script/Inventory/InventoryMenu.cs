@@ -8,6 +8,7 @@ public class InventoryMenu : MonoBehaviour
     public GameObject playerStats;
 
     public GameObject chestUI;
+    public GameObject craftingUI;
 
 
 
@@ -15,6 +16,7 @@ public class InventoryMenu : MonoBehaviour
     {
         closeInventory();
         chestUI.SetActive(false);
+        craftingUI.SetActive(false);
     }
 
     void Update()
@@ -30,8 +32,6 @@ public class InventoryMenu : MonoBehaviour
             else
             {
                 openInventory();
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
             }
         }
     }
@@ -74,5 +74,19 @@ public class InventoryMenu : MonoBehaviour
         Inventory.SetActive(true);
         deleteSlot.SetActive(true);
         playerStats.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
+
+    public void openCraftingMenu()
+    {
+        openInventory();
+        craftingUI.SetActive(true);
+    }
+
+    public void closeCraftingMenu()
+    {
+        craftingUI.SetActive(false);
+    }
+
 }

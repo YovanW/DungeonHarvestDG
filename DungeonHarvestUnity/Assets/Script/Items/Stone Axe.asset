@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone Axe
   m_EditorClassIdentifier: 
   itemName: Stone Axe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 647e85aa88b2f3348bd8fda822133b29, type: 3}
   prefab: {fileID: 5116203304770365225, guid: a83e6ae9be120824bab99852e97a55e8, type: 3}
   type: 2
   actionType: 1

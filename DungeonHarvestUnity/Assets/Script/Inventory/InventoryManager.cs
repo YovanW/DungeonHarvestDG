@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
-    public int maxStackSize = 64;
+    public int maxStackSize = 20;
+    public static event Action OnInventoryChanged;
 
 
     public void AddItem(ItemSO item)
@@ -22,6 +24,7 @@ public class InventoryManager : MonoBehaviour
                 // Stackable
                 itemInSlot.count++;
                 itemInSlot.refreshCount();
+                NotifyChange();
                 return;
             }
         }
@@ -37,6 +40,7 @@ public class InventoryManager : MonoBehaviour
             {
                 // Empty slot found
                 SpawnNewItem(item, slot);
+                NotifyChange();
                 return;
             }
         }
@@ -71,6 +75,7 @@ public class InventoryManager : MonoBehaviour
                     Destroy(itemInSlot.gameObject);
                 }
             }
+            NotifyChange();
             return;
         }
 
@@ -93,8 +98,42 @@ public class InventoryManager : MonoBehaviour
                     // Remove item
                     Destroy(itemInSlot.gameObject);
                 }
+                NotifyChange();
                 return;
             }
         }
+    }
+
+    public bool HasEnoughItem(ItemSO item, int requiredAmount)
+    {
+        int total = 0;
+
+        foreach (var slot in inventorySlots)
+        {
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot != null && itemInSlot.item == item)
+            {
+                total += itemInSlot.count;
+                if (total >= requiredAmount)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool HasMaterials(CraftingRecipe recipe)
+    {
+        foreach (var mat in recipe.Material)
+        {
+            if (!HasEnoughItem(mat.item, mat.amount))
+                return false;
+        }
+        return true;
+    }
+
+    void NotifyChange()
+    {
+        OnInventoryChanged?.Invoke();
     }
 }

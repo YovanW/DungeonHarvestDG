@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mythril Axe
   m_EditorClassIdentifier: 
   itemName: Mythril Axe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7fdf21de594fcb8429f47b77f0ab810d, type: 3}
   prefab: {fileID: 3371556504602905152, guid: 8af07ae315838be44afe7ad9b80b669a, type: 3}
   type: 2
   actionType: 1

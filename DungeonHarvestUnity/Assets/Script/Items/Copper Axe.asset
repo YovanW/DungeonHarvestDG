@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Copper Axe
   m_EditorClassIdentifier: 
   itemName: Copper Axe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e58ac0cda361eda4caba6fd67a8bff3d, type: 3}
   prefab: {fileID: 258685147928426734, guid: 76e83a91ceaf10544956ae3183484ff6, type: 3}
   type: 2
   actionType: 1

@@ -47,11 +47,28 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
 
+            // Crafting Table + furance
+            if (ray.lookingAt.GetComponent<openCraftMenu>())
+            {
+                if (inventoryMenu.isOpen)
+                {
+                    inventoryMenu.closeInventory();
+                    inventoryMenu.closeCraftingMenu();
+                    return;
+                }
+
+                openCraftMenu station = ray.lookingAt.GetComponent<openCraftMenu>();
+                station.Open();
+
+                inventoryMenu.openCraftingMenu();
+            }
         }
 
         // fail-safe checker for Tab close all inventory
         if (Input.GetKeyDown(KeyCode.Tab) && ray.lookingAt != null)
         {
+            inventoryMenu.closeCraftingMenu();
+
             chestOpen chest = ray.lookingAt.GetComponent<chestOpen>();
             if (chest == null) return;
 

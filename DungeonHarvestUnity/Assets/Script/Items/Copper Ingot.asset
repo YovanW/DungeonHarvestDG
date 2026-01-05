@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b45b5d2d9820c642a431c6e229e06c6, type: 3}
-  m_Name: Iron Rake
+  m_Name: Copper Ingot
   m_EditorClassIdentifier: 
-  itemName: Iron Rake
-  icon: {fileID: 21300000, guid: fbd09ad74a1f156479b3c04d93f32bc4, type: 3}
-  prefab: {fileID: 5965308706481879671, guid: 33e88488a538d5d4cb14308765b3c1bf, type: 3}
-  type: 2
-  actionType: 2
-  stackable: 0
+  itemName: Copper Ingot
+  icon: {fileID: 21300000, guid: a8f9a070219e0eb42b6f40abf09b7f95, type: 3}
+  prefab: {fileID: 7672101747355140683, guid: 7bcb332970cc91840809396a7f888f9a, type: 3}
+  type: 0
+  actionType: 5
+  stackable: 1
   miningPower: 0
-  extraInfo: 2
-  itemOffsetInHand: {x: -0.022, y: -0.947, z: -0.05}
+  extraInfo: 0
+  itemOffsetInHand: {x: 0.047, y: 0.38, z: 0}

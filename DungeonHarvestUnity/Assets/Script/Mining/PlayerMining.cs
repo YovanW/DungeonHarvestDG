@@ -95,6 +95,8 @@ public class PlayerMining : MonoBehaviour
             yield return null;
         }
 
+        
+
         // recover
         t = 0f;
         while (t < 1f)
