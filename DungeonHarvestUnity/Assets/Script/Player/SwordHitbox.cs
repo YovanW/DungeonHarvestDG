@@ -5,6 +5,7 @@ public class SwordHitbox : MonoBehaviour
     public float damage;
     private bool canDamage;
     private Collider hitbox;
+    public statController stat;
 
     void Awake()
     {
@@ -14,7 +15,7 @@ public class SwordHitbox : MonoBehaviour
 
     public void EnableHitbox(float dmg)
     {
-        damage = dmg;
+        damage = dmg + (float)stat.getDamage();
         canDamage = true;
         hitbox.enabled = true;
         
@@ -30,6 +31,7 @@ public class SwordHitbox : MonoBehaviour
         Debug.Log("here");
         if (!canDamage) return;
         EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+        
         Debug.Log(
             $"HIT TRIGGERED BY: {other.gameObject.name} | " +
             $"Tag: {other.gameObject.tag} | " +
