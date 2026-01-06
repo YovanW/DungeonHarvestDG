@@ -50,6 +50,8 @@ public class settingManager : MonoBehaviour
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         vfxSlider.onValueChanged.AddListener(SetVFXVolume);
+
+        LoadSettings();
     }
 
     // ================= DISPLAY MODE =================
@@ -118,4 +120,36 @@ public class settingManager : MonoBehaviour
         float db = normalized <= 0f ? -80f : Mathf.Log10(normalized) * 20f;
         audioMixer.SetFloat(param, db);
     }
+
+    void LoadSettings()
+    {
+        // ========== DISPLAY ==========
+        string display = PlayerPrefs.GetString("DisplayMode", "Fullscreen");
+
+        if (display == "Fullscreen")
+            SelectDisplayMode(fullscreenBtn);
+        else if (display == "Windowed")
+            SelectDisplayMode(windowedBtn);
+        else
+            SelectDisplayMode(borderlessBtn);
+
+        // ========== MOUSE ==========
+        float mouse = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
+        mouseSlider.value = mouse;
+        SetMouseSensitivity(mouse);
+
+        // ========== AUDIO ==========
+        float master = PlayerPrefs.GetFloat("MasterVolume", 100f);
+        masterSlider.value = master;
+        SetMasterVolume(master);
+
+        float music = PlayerPrefs.GetFloat("MusicVolume", 100f);
+        musicSlider.value = music;
+        SetMusicVolume(music);
+
+        float vfx = PlayerPrefs.GetFloat("VFXVolume", 100f);
+        vfxSlider.value = vfx;
+        SetVFXVolume(vfx);
+    }
+
 }
