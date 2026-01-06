@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone Sword
   m_EditorClassIdentifier: 
   itemName: StoneSword
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 568ef990d865384488028d2a9c8bc1f6, type: 3}
   prefab: {fileID: 919132149155446097, guid: 630f038ee5ea6cb479be86f8f238560e, type: 3}
   type: 2
   actionType: 3

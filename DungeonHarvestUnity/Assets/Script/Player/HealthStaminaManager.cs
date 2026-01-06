@@ -28,33 +28,33 @@ public class HealthStaminaManager : MonoBehaviour
     public float staminaDrainRate = 20f;
     public float staminaRegenRate = 15f;
     public float staminaRegenDelay = 2f;
-    
+
     [Header("UI References")]
     public Slider healthBar;
     public Slider staminaBar;
     public TMP_Text healthText;  // Changed from Text to TMP_Text
     public TMP_Text staminaText; // Changed from Text to TMP_Text
-    
+
     [Header("Low Stamina Effects")]
     public bool enableStaminaEffects = true;
     public float lowStaminaThreshold = 25f;
     public AudioSource heavyBreathingAudio;
-    
+
     private float lastStaminaUseTime;
     private FirstPersonController playerController;
-    
+
     void Start()
     {
         // Initialize values
         currentHealth = maxHealth;
         currentStamina = maxStamina;
-        
+
         playerController = GetComponent<FirstPersonController>();
-        
+
         // Initialize UI with proper values
         InitializeUI();
     }
-    
+
     void InitializeUI()
     {
         // Set slider max values
@@ -64,18 +64,18 @@ public class HealthStaminaManager : MonoBehaviour
             healthBar.maxValue = maxHealth;
             healthBar.value = currentHealth;
         }
-        
+
         if (staminaBar != null)
         {
             staminaBar.minValue = 0;
             staminaBar.maxValue = maxStamina;
             staminaBar.value = currentStamina;
         }
-        
+
         UpdateHealthUI();
         UpdateStaminaUI();
     }
-    
+
     void Update()
     {
         maxHealth = stat.getHealth();
@@ -106,13 +106,13 @@ public class HealthStaminaManager : MonoBehaviour
     void HandleStamina()
     {
         bool isUsingStamina = false;
-        
+
         if (playerController != null)
         {
-            bool isSprinting = Input.GetKey(KeyCode.LeftShift) && 
-                              (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || 
+            bool isSprinting = Input.GetKey(KeyCode.LeftShift) &&
+                              (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||
                                Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D));
-            
+
             if (isSprinting && currentStamina > 0)
             {
                 currentStamina -= staminaDrainRate * Time.deltaTime;
@@ -120,18 +120,18 @@ public class HealthStaminaManager : MonoBehaviour
                 lastStaminaUseTime = Time.time;
             }
         }
-        
+
         if (!isUsingStamina && Time.time - lastStaminaUseTime > staminaRegenDelay)
         {
             currentStamina += staminaRegenRate * Time.deltaTime;
         }
-        
+
         currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
-        
+
         UpdateStaminaUI();
         HandleLowStaminaEffects();
     }
-    
+
     public void TakeDamage(float damage)
     {
         if (isDead) return;
@@ -142,6 +142,9 @@ public class HealthStaminaManager : MonoBehaviour
 
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.takeDamage);
 
         lastHealthDamageTime = Time.time; // start regen delay
 
@@ -166,7 +169,7 @@ public class HealthStaminaManager : MonoBehaviour
         }
     }
 
-    
+
     public bool UseStamina(float staminaCost)
     {
         if (currentStamina >= staminaCost)
@@ -178,39 +181,39 @@ public class HealthStaminaManager : MonoBehaviour
         }
         return false;
     }
-    
+
     void UpdateHealthUI()
     {
         if (healthBar != null)
         {
             healthBar.value = currentHealth;
         }
-        
+
         if (healthText != null)
         {
             healthText.text = $"{Mathf.RoundToInt(currentHealth)} / {Mathf.RoundToInt(maxHealth)}";
         }
     }
-    
+
     void UpdateStaminaUI()
     {
         if (staminaBar != null)
         {
             staminaBar.value = currentStamina;
         }
-        
+
         if (staminaText != null)
         {
             staminaText.text = $"{Mathf.RoundToInt(currentStamina)} / {Mathf.RoundToInt(maxStamina)}";
         }
     }
-    
+
     void HandleLowStaminaEffects()
     {
         if (!enableStaminaEffects) return;
-        
+
         bool isLowStamina = currentStamina <= lowStaminaThreshold;
-        
+
         if (heavyBreathingAudio != null)
         {
             if (isLowStamina && !heavyBreathingAudio.isPlaying)
@@ -223,7 +226,7 @@ public class HealthStaminaManager : MonoBehaviour
             }
         }
     }
-    
+
     void Die()
     {
         if (isDead) return;
@@ -231,16 +234,19 @@ public class HealthStaminaManager : MonoBehaviour
 
         Debug.Log("Player died!");
 
-        GameObject.FindGameObjectWithTag("DeathScreen").GetComponent<PlayerDeathUI>().Show();
+        GameObject.FindGameObjectWithTag("CanvasController").GetComponent<PlayerDeathUI>().Show();
 
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlayDeathSFX(GameAudio.Instance.death);
     }
 
     public void ResetHealth()
     {
         isDead = false;
         currentHealth = maxHealth;
+        UpdateHealthUI();
     }
-    
+
     public float GetHealthPercentage() => currentHealth / maxHealth;
     public float GetStaminaPercentage() => currentStamina / maxStamina;
     public bool HasLowStamina() => currentStamina <= lowStaminaThreshold;

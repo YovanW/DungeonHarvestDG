@@ -22,6 +22,8 @@ public class FirstPersonController : MonoBehaviour
     public float dashStaminaCost = 1f;
     public float minStaminaToSprint = 10f;
 
+
+
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
@@ -31,6 +33,9 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 dashDirection;
     private float xRotation = 0f;
     private HealthStaminaManager healthStaminaManager;
+    private bool isMoving;
+    private bool isSprinting;
+
 
     void Start()
     {
@@ -88,29 +93,47 @@ public class FirstPersonController : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
+
         bool canSprint = healthStaminaManager == null || healthStaminaManager.currentStamina > minStaminaToSprint;
         bool trySprint = Input.GetKey(KeyCode.LeftShift) && canSprint;
 
         float currentSpeed = trySprint ? sprintSpeed : walkSpeed;
-
         controller.Move(move * currentSpeed * Time.deltaTime);
+
+        isMoving = move.magnitude > 0.1f;
+        isSprinting = Input.GetKey(KeyCode.LeftShift) && canSprint && isMoving;
+
+        // ===== FOOTSTEP AUDIO =====
+        if (GameAudio.Instance != null)
+        {
+            if (isMoving)
+                GameAudio.Instance.StartWalk(isSprinting);
+            else
+                GameAudio.Instance.StopWalk();
+        }
+
     }
 
-    private float lastJumpTime;
-    public float jumpCooldown = 0.2f;
-
     private int jumpCount = 0;
-    private int maxJumps = 1; // For double jump
+    public int maxJumps = 1; // For double jump
+    public float jumpResetDelay = 1f; // second
+    private float lastJumpInputTime;
 
     void HandleJump()
     {
-        // Reset jump count when grounded
-        if (controller.isGrounded)
+        if (lastJumpInputTime > 0)
+        {
+            lastJumpInputTime -= Time.deltaTime;
+        }
+
+        Debug.Log("lastJumpInputTime : " + lastJumpInputTime);
+
+        // reset jump chain if timer expired
+        if (jumpCount > 0 && lastJumpInputTime <= 0)
         {
             jumpCount = 0;
         }
 
-        if (Time.time < lastJumpTime + jumpCooldown) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
         {
@@ -122,13 +145,17 @@ public class FirstPersonController : MonoBehaviour
 
             Debug.Log("JUMP " + (jumpCount + 1));
 
-            velocity.y = 0;
-            velocity.y = Mathf.Sqrt(jumpForce * -1f * gravity);
+            if (GameAudio.Instance != null)
+                GameAudio.Instance.PlaySFX(GameAudio.Instance.jump);
 
-            lastJumpTime = Time.time;
+            velocity.y = 0;
+            velocity.y = Mathf.Sqrt(jumpForce * -gravity);
+
+            lastJumpInputTime = jumpResetDelay;
             jumpCount++;
         }
     }
+
 
     void HandleDodge()
     {
@@ -149,6 +176,8 @@ public class FirstPersonController : MonoBehaviour
                     if (!healthStaminaManager.UseStamina(dashStaminaCost))
                         return;
                 }
+                if (GameAudio.Instance != null)
+                    GameAudio.Instance.PlaySFX(GameAudio.Instance.dash);
 
                 StartDodge(new Vector3(x, 0, z).normalized);
             }

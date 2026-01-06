@@ -33,6 +33,10 @@ public class SwordAttack : MonoBehaviour
         if (isSwinging) yield break;
         isSwinging = true;
 
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.swing);
+
+
         Transform sword = itemHand.transform;
 
         Vector3 startPos = sword.localPosition;
