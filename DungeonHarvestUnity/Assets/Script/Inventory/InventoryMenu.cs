@@ -22,7 +22,7 @@ public class InventoryMenu : MonoBehaviour
     void Update()
     {
         // invetory open and close
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !GetComponent<PlayerDeathUI>().canvas.activeSelf)
         {
 
             if (isOpen)

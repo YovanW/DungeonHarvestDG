@@ -77,7 +77,9 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        bool deathUI = GetComponent<PlayerDeathUI>().canvas.activeSelf;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !deathUI)
         {
             if (isOpen && settingCanvas.activeSelf == false) { resume(); }
             else if (settingCanvas.activeSelf == true) { back(); }
