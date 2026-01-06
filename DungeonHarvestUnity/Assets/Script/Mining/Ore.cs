@@ -68,6 +68,9 @@ public class Ore : MonoBehaviour
 
         if (health <= 0)
         {
+            if (GameAudio.Instance != null)
+                GameAudio.Instance.PlaySFX(GameAudio.Instance.rockBreak);
+
             if (inventoryManager != null)
                 SpawnDrops();
 
@@ -79,8 +82,6 @@ public class Ore : MonoBehaviour
     IEnumerator HitAnimation()
     {
         yield return new WaitForSeconds(0.14f); // start delay (tunggu animasi pickaxe hit dulu)
-
-        // TODO: play sfx mining (ore hit)
 
         Vector3 startPos = transform.localPosition;
 

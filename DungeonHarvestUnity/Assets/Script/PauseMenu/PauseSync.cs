@@ -5,6 +5,7 @@ public class PauseSync : MonoBehaviour
     private bool pauseMenu;
     private bool settingCanvas;
     private bool inventoryMenu;
+    private bool deathUI;
 
     private GameObject crosshair;
 
@@ -13,8 +14,9 @@ public class PauseSync : MonoBehaviour
         pauseMenu = GetComponent<PauseMenu>().pauseMenu.activeSelf;
         settingCanvas = GetComponent<PauseMenu>().settingCanvas.activeSelf;
         inventoryMenu = GetComponent<InventoryMenu>().Inventory.activeSelf;
+        deathUI = GetComponent<PlayerDeathUI>().canvas.activeSelf;
 
-        if (pauseMenu || settingCanvas || inventoryMenu)
+        if (pauseMenu || settingCanvas || inventoryMenu || deathUI)
         {
             Time.timeScale = 0f;
 

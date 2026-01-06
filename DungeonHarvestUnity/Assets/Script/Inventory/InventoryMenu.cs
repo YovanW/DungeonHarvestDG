@@ -22,7 +22,7 @@ public class InventoryMenu : MonoBehaviour
     void Update()
     {
         // invetory open and close
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !GetComponent<PlayerDeathUI>().canvas.activeSelf)
         {
 
             if (isOpen)
@@ -54,6 +54,10 @@ public class InventoryMenu : MonoBehaviour
         playerStats.SetActive(false);
         chestUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (ItemTooltip.Instance == null) return;
+        ItemTooltip.Instance.Hide();
+
     }
 
 
@@ -65,7 +69,9 @@ public class InventoryMenu : MonoBehaviour
         playerStats.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
 
+        if (ItemTooltip.Instance == null) return;
         ItemTooltip.Instance.Hide();
+
     }
 
     public void openInventory()

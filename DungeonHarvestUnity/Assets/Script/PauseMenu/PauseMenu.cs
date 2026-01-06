@@ -52,11 +52,26 @@ public class PauseMenu : MonoBehaviour
     }
     public void saveAndExit()
     {
-        // TODO: implement save functionality
+        // Save player inventory
         inventoryManager.SaveInventory();
+
+        // // Save all chests in the scene
+        // chestOpen[] allChests = Object.FindObjectsByType<chestOpen>(
+        //     FindObjectsSortMode.None // faster, no sorting by InstanceID
+        // );
+
+        // foreach (var chest in allChests)
+        // {
+        //     chest.SaveItemsFromUI();
+        //     chest.SaveChestToFile();
+        // }
+
+
+        // Mark save and commit PlayerPrefs
         PlayerPrefs.SetInt("SavedGame", 1);
         PlayerPrefs.Save();
 
+        // Go back to main menu
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -77,7 +92,9 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        bool deathUI = GetComponent<PlayerDeathUI>().canvas.activeSelf;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !deathUI)
         {
             if (isOpen && settingCanvas.activeSelf == false) { resume(); }
             else if (settingCanvas.activeSelf == true) { back(); }

@@ -5,7 +5,7 @@ public class FirstPersonController : MonoBehaviour
     [Header("Movement Settings")]
     public float walkSpeed = 5f;
     public float sprintSpeed = 8f;
-    public float jumpForce = 5f;
+    public float jumpForce = 2.5f;
     public float gravity = -9.81f;
 
     [Header("Dodge/Dash Settings")]
@@ -53,6 +53,18 @@ public class FirstPersonController : MonoBehaviour
         HandleJump();
         HandleDodge();
         ApplyGravity();
+    }
+
+    public void ResetLook()
+    {
+        xRotation = 0f;
+
+        // reset rotasi camera (pitch)
+        if (playerCamera != null)
+            playerCamera.localRotation = Quaternion.identity;
+
+        // reset rotasi player (yaw)
+        transform.rotation = Quaternion.identity;
     }
 
     void HandleMouseLook()
