@@ -10,6 +10,7 @@ TagManager:
   - CanvasController
   - Enemy
   - DeathScreen
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

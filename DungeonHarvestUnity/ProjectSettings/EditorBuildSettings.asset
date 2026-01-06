@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Floor1.unity
+    guid: 986f7490b368ff340b81850da92ab933
+  - enabled: 1
+    path: Assets/Scenes/Floor2.unity
+    guid: 984218bc04e7ac74a99f2b2d0c2989a5
+  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 9acd9d10dd30b0b4b82b9354f5559148
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: abdd0e696f975324da1b873b87a015b1
   - enabled: 1
-    path: Assets/Scenes/Floor1.unity
-    guid: 986f7490b368ff340b81850da92ab933
-  - enabled: 1
     path: Assets/Scenes/nathanTest.unity
     guid: 043bf0da4a616db4bb059f12057972aa
-  - enabled: 1
-    path: Assets/UI/Fantastic UI Starter Pack/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
