@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using System.Collections;
+
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,7 +12,10 @@ public class EnemyHealth : MonoBehaviour
     private Animator anim;
     private NavMeshAgent agent;
     private Collider[] colliders;
+    public float MaxHealth => maxHealth;
+    public float CurrentHealth => currentHealth;
 
+    public Image fillImage;
     private bool isDead = false;
 
     void Awake()
@@ -32,6 +37,9 @@ public class EnemyHealth : MonoBehaviour
 
         currentHealth -= damage;
 
+        fillImage.fillAmount =
+            currentHealth / maxHealth;
+
         if (currentHealth <= 0)
         {
             Die();
@@ -51,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
             agent.enabled = false;
         }
 
-        // Disable all colliders (prevents further hits)
+        // Disable all colliders
         foreach (Collider c in colliders)
         {
             c.enabled = false;
@@ -63,6 +71,7 @@ public class EnemyHealth : MonoBehaviour
         // Destroy after delay
         StartCoroutine(DestroyAfterDelay());
     }
+
 
     IEnumerator DestroyAfterDelay()
     {

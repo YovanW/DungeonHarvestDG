@@ -178,8 +178,18 @@ public class HealthStaminaManager : MonoBehaviour
     
     void Die()
     {
+        if (isDead) return;
         isDead = true;
+
         Debug.Log("Player died!");
+
+        FindObjectOfType<PlayerDeathUI>().Show();
+    }
+
+    public void ResetHealth()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
     }
     
     public float GetHealthPercentage() => currentHealth / maxHealth;

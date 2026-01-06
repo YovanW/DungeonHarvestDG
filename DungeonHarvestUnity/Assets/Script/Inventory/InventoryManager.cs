@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
 
     void Awake()
     {
-        LoadInventory();
+        // LoadInventory();
     }
 
     public void AddItem(ItemSO item)
