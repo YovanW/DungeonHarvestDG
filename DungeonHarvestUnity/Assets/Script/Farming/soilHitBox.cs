@@ -120,6 +120,10 @@ public class soilHitBox : MonoBehaviour
     {
         if (isRaked)
         {
+            // sfx
+            if (GameAudio.Instance != null)
+                GameAudio.Instance.PlaySFX(GameAudio.Instance.plant);
+
             seedPrefab = seed;
             growthTimer = 0f;
             readyToHarvest = false;
@@ -152,6 +156,10 @@ public class soilHitBox : MonoBehaviour
     {
         if (fertilizerSlots > 0)
         {
+            // sfx
+            if (GameAudio.Instance != null)
+                GameAudio.Instance.PlaySFX(GameAudio.Instance.plant);
+
             Vector3 offset = fertilizer.GetComponent<fertilizerOffset>().offset;
             Vector3 scale = fertilizer.GetComponent<fertilizerOffset>().scale;
 

@@ -82,6 +82,10 @@ public class PlayerMining : MonoBehaviour
             pickaxe.localRotation = Quaternion.Lerp(startRot, backRot, ease);
             yield return null;
         }
+        
+        // Hit sfx
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.mine);
 
         // strike
         t = 0f;
@@ -95,7 +99,7 @@ public class PlayerMining : MonoBehaviour
             yield return null;
         }
 
-        
+
 
         // recover
         t = 0f;

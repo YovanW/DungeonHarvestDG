@@ -18,7 +18,7 @@ public class PlayerConsumable : MonoBehaviour
     void Start()
     {
         defaultLocalPos = itemInHand.transform.localPosition;
-        defaultLocalRot = itemInHand.transform.localRotation;   
+        defaultLocalRot = itemInHand.transform.localRotation;
 
         if (statController == null)
             Debug.LogWarning("statController reference is missing");
@@ -126,6 +126,10 @@ public class PlayerConsumable : MonoBehaviour
         if (isEating) yield break;
 
         isEating = true;
+
+        // sfx
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.eat);
 
         // Use the current local position/rotation as start
         Vector3 startLocalPos = itemInHand.transform.localPosition;

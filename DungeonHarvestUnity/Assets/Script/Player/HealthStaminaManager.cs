@@ -8,7 +8,20 @@ public class HealthStaminaManager : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
     public bool isDead = false;
-    
+    public statController stat;
+
+    [Header("Health Regen")]
+    public float healthRegenRate = 1f;
+    public float healthRegenDelay = 5f;
+    private float lastHealthDamageTime;
+
+    // [Header("Level settings")]
+    // public float baseLevel = 100;
+    // public float currentLevel = 0;
+    // public float currentXp = 0;
+    // public float xpGrowth = 15;
+    // public float xpExponential = 10;
+
     [Header("Stamina Settings")]
     public float maxStamina = 100f;
     public float currentStamina;
@@ -65,9 +78,31 @@ public class HealthStaminaManager : MonoBehaviour
     
     void Update()
     {
+        maxHealth = stat.getHealth();
         HandleStamina();
+        HandleHealthRegen();
+
     }
-    
+
+    // void HandleXp()
+    // {
+    //     if (currentXp >= baseLevel)
+    //     {
+    //         //level up function shows a canvas for leveling up
+    //         //int overflow = currentxp - baselevel
+    //         //reset the currentxp
+    //         //currentxp += overflow
+    //         //increase currentlevel
+    //         //increase baselevel with 
+    //         //xpGrowth + xpExponential*currentLevel
+    //         //maxhealth + healthlevelincrease (5)
+    //         //maxstamina + staminalevelincrease (5)
+    //         //update the xp bar
+
+
+    //     }
+    // }
+
     void HandleStamina()
     {
         bool isUsingStamina = false;
@@ -100,24 +135,37 @@ public class HealthStaminaManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (isDead) return;
-        
+
+        damage -= stat.getDefense();
+
+        if (damage < 0) return;
+
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        
+
+        lastHealthDamageTime = Time.time; // start regen delay
+
         UpdateHealthUI();
-        
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-    
-    public void Heal(float healAmount)
+
+    void HandleHealthRegen()
     {
-        currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        UpdateHealthUI();
+        if (isDead) return;
+        if (currentHealth >= maxHealth) return;
+
+        if (Time.time - lastHealthDamageTime > healthRegenDelay)
+        {
+            currentHealth += healthRegenRate * Time.deltaTime;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+            UpdateHealthUI();
+        }
     }
+
     
     public bool UseStamina(float staminaCost)
     {
@@ -178,8 +226,19 @@ public class HealthStaminaManager : MonoBehaviour
     
     void Die()
     {
+        if (isDead) return;
         isDead = true;
+
         Debug.Log("Player died!");
+
+        GameObject.FindGameObjectWithTag("DeathScreen").GetComponent<PlayerDeathUI>().Show();
+
+    }
+
+    public void ResetHealth()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
     }
     
     public float GetHealthPercentage() => currentHealth / maxHealth;
