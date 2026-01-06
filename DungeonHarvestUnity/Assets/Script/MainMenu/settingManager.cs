@@ -109,7 +109,7 @@ public class settingManager : MonoBehaviour
 
     public void SetVFXVolume(float value)
     {
-        SetVolume("VFXVol", value);
+        SetVolume("SFXVol", value);
         vfxValueText.text = value.ToString("0");
         PlayerPrefs.SetFloat("VFXVolume", value);
     }
