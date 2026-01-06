@@ -9,6 +9,7 @@ TagManager:
   - InventoryManager
   - CanvasController
   - Enemy
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

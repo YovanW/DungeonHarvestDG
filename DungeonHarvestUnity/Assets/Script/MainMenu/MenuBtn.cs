@@ -102,15 +102,17 @@ public class MenuBtn : MonoBehaviour
 
     public void newGame()
     {
+        // Delete saved inventory and chest data
         PlayerPrefs.DeleteKey("SavedGame");
         PlayerPrefs.DeleteKey("InventoryData");
+        PlayerPrefs.DeleteKey("allChestSaved"); // clear all chest saves
         PlayerPrefs.Save();
 
-        // FIXME: test scene load
+        // Load the test scene
         SceneManager.LoadScene("nathanTest");
         // SceneManager.LoadScene("Demo");
 
-        // force the button to return to normal state
+        // Reset UI selection
         EventSystem.current.SetSelectedGameObject(null);
     }
 
