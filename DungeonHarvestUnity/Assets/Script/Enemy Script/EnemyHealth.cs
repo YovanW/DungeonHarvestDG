@@ -25,7 +25,6 @@ public class EnemyHealth : MonoBehaviour
         colliders = GetComponentsInChildren<Collider>();
     }
 
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -67,6 +66,8 @@ public class EnemyHealth : MonoBehaviour
 
         // Play death animation
         anim.SetTrigger("Die");
+
+        
 
         // Destroy after delay
         StartCoroutine(DestroyAfterDelay());
