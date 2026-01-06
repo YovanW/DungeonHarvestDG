@@ -100,6 +100,10 @@ public class PlayerCutting : MonoBehaviour
             yield return null;
         }
 
+        // Hit sfx
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.chop);
+
         // recover
         t = 0f;
         while (t < 1f)

@@ -111,6 +111,9 @@ public class playerFarming : MonoBehaviour
 
     void TryHarvest(soilHitBox soil)
     {
+        // sfx
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.harvest);
 
         // add harvested crops to inventory
         ItemSO cropPrefab = soil.seedPrefab.GetComponent<harvestPrefab>().harvestItem;
@@ -164,6 +167,10 @@ public class playerFarming : MonoBehaviour
     {
         if (isSwinging) yield break;
         isSwinging = true;
+
+        // sfx
+        if (GameAudio.Instance != null)
+            GameAudio.Instance.PlaySFX(GameAudio.Instance.rake);
 
         Transform rake = itemHand.transform;
 
