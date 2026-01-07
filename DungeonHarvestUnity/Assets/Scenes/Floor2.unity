@@ -11669,6 +11669,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7405862854972725723, guid: b898009e63472d148acf1044d32e577b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9205335902779299545, guid: b898009e63472d148acf1044d32e577b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -26644,7 +26648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5904259651582333035, guid: 30d6180b021781e499a1a5534d5b4d24, type: 3}
       propertyPath: sceneName
-      value: Floor1
+      value: Demo
       objectReference: {fileID: 0}
     - target: {fileID: 6273423192966880538, guid: 30d6180b021781e499a1a5534d5b4d24, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
