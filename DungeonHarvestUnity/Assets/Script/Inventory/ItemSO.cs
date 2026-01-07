@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Tilemaps;
-using Microsoft.Unity.VisualStudio.Editor;
+
 
 
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]

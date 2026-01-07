@@ -1155,6 +1155,7 @@ Transform:
   - {fileID: 1062537965}
   - {fileID: 707193768}
   - {fileID: 1412671395}
+  - {fileID: 1574508205}
   - {fileID: 1412546561}
   m_Father: {fileID: 1756276638}
   m_LocalEulerAnglesHint: {x: 0, y: -375.07, z: 0}
@@ -1242,7 +1243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 640133006985969038, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_Name
-      value: RandChest
+      value: RandChest floor2 1
       objectReference: {fileID: 0}
     - target: {fileID: 6877529195799635586, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3332,7 +3333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 640133006985969038, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_Name
-      value: RandChest (2)
+      value: RandChest floor2 3
       objectReference: {fileID: 0}
     - target: {fileID: 6877529195799635586, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3897,7 +3898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905030064043184676, guid: 840cbbc4e3f1c4c4f969f707bdf5b36d, type: 3}
       propertyPath: m_Name
-      value: FarmChest (1)
+      value: FarmChest floor2 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5903,7 +5904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610622268726666, guid: 074e9fd3c543c144e972e97dff953b88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.06868
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 4610622268726666, guid: 074e9fd3c543c144e972e97dff953b88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11371,7 +11372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905030064043184676, guid: 840cbbc4e3f1c4c4f969f707bdf5b36d, type: 3}
       propertyPath: m_Name
-      value: FarmChest
+      value: FarmChest floor2 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14225,7 +14226,7 @@ Transform:
   m_GameObject: {fileID: 852540349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.707, y: 1.895, z: -2.505}
+  m_LocalPosition: {x: -2.77, y: 1.895, z: -2.62}
   m_LocalScale: {x: 1.7727, y: 1, z: 1.7221667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15978,7 +15979,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 640133006985969038, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_Name
-      value: RandChest (1)
+      value: RandChest floor2 2
       objectReference: {fileID: 0}
     - target: {fileID: 6877529195799635586, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17806,7 +17807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905030064043184676, guid: 840cbbc4e3f1c4c4f969f707bdf5b36d, type: 3}
       propertyPath: m_Name
-      value: FarmChest (3)
+      value: FarmChest floor2 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24223,6 +24224,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 280b750e22371cc439abfb317bd76cd3, type: 3}
+--- !u!1001 &1574508204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 43714498}
+    m_Modifications:
+    - target: {fileID: 1293430722865970, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_Name
+      value: Rock2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.564
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.13112758
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99136555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+--- !u!4 &1574508205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
+  m_PrefabInstance: {fileID: 1574508204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575934109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26197,7 +26260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5366077
+      value: 1.904
       objectReference: {fileID: 0}
     - target: {fileID: 4705614124702618, guid: 473537c058b2b4c478082268e7026d93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30522,7 +30585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905030064043184676, guid: 840cbbc4e3f1c4c4f969f707bdf5b36d, type: 3}
       propertyPath: m_Name
-      value: FarmChest (2)
+      value: FarmChest floor2 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31574,7 +31637,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 640133006985969038, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_Name
-      value: RandChest (1)
+      value: RandChest floor2 5
       objectReference: {fileID: 0}
     - target: {fileID: 6877529195799635586, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_LocalScale.x
@@ -31776,7 +31839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 640133006985969038, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_Name
-      value: RandChest
+      value: RandChest floor2 4
       objectReference: {fileID: 0}
     - target: {fileID: 6877529195799635586, guid: 44bbca7f6a88c454ba5a90abf4a3486b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33102,8 +33165,8 @@ Transform:
   m_GameObject: {fileID: 2142468104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.3310852, y: 0.3, z: -1.5327625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.121, y: -0.34631, z: -1.187}
+  m_LocalScale: {x: 1.3182, y: 1.3182, z: 1.3182}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2039220798}

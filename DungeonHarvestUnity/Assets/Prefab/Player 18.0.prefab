@@ -18906,7 +18906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crosshairTexture: {fileID: 2800000, guid: 784a27e45e120c24ca6f71f5be3afcba, type: 3}
-  crosshairSize: {x: 100, y: 100}
+  crosshairSize: {x: 50, y: 50}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8322575534381158179
 GameObject:
