@@ -20,7 +20,7 @@ public class PlayerDeathUI : MonoBehaviour
 
         // get player spawn coord
         respawnPosition = player.position;
-        Debug.Log(respawnPosition);
+        // Debug.Log(respawnPosition);
     }
 
 

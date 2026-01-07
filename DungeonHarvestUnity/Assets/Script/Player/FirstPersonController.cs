@@ -132,7 +132,7 @@ public class FirstPersonController : MonoBehaviour
             lastJumpInputTime -= Time.deltaTime;
         }
 
-        Debug.Log("lastJumpInputTime : " + lastJumpInputTime);
+        // Debug.Log("lastJumpInputTime : " + lastJumpInputTime);
 
         // reset jump chain if timer expired
         if (jumpCount > 0 && lastJumpInputTime <= 0)

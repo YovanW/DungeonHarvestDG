@@ -39,8 +39,8 @@ public class MenuBtn : MonoBehaviour
             continueBtn.interactable = false;
         }
 
-        // //FIXME: test change scene
-        continueBtn.interactable = true;
+        // // test change scene
+        // continueBtn.interactable = true;
 
         // Hide other canvases
         playCanvas.SetActive(false);
@@ -95,8 +95,6 @@ public class MenuBtn : MonoBehaviour
     {
         Debug.Log("Continue Game");
 
-        // FIXME: test scene load
-        // SceneManager.LoadScene("nathanTest");
         SceneManager.LoadScene("Demo");
     }
 
@@ -109,8 +107,7 @@ public class MenuBtn : MonoBehaviour
         PlayerPrefs.Save();
 
         // Load the test scene
-        // SceneManager.LoadScene("nathanTest");
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("CutScene-Prologue");
 
         // Reset UI selection
         EventSystem.current.SetSelectedGameObject(null);

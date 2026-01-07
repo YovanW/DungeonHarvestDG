@@ -8,7 +8,7 @@ public class sceneChanger : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            spawnPointFinder.isTeleporting = true;
+            // spawnPointFinder.isTeleporting = true;
             SceneManager.LoadScene(sceneName);
         }        
     }
