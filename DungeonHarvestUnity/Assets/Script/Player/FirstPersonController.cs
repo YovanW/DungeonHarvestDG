@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -58,6 +59,11 @@ public class FirstPersonController : MonoBehaviour
         HandleJump();
         HandleDodge();
         ApplyGravity();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene("Floor2");
+        }
     }
 
     public void ResetLook()
