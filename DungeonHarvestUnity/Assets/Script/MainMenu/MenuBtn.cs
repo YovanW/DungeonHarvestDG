@@ -96,8 +96,8 @@ public class MenuBtn : MonoBehaviour
         Debug.Log("Continue Game");
 
         // FIXME: test scene load
-        SceneManager.LoadScene("nathanTest");
-        // SceneManager.LoadScene("Demo");
+        // SceneManager.LoadScene("nathanTest");
+        SceneManager.LoadScene("Demo");
     }
 
     public void newGame()
@@ -109,8 +109,8 @@ public class MenuBtn : MonoBehaviour
         PlayerPrefs.Save();
 
         // Load the test scene
-        SceneManager.LoadScene("nathanTest");
-        // SceneManager.LoadScene("Demo");
+        // SceneManager.LoadScene("nathanTest");
+        SceneManager.LoadScene("Demo");
 
         // Reset UI selection
         EventSystem.current.SetSelectedGameObject(null);
